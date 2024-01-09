@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className="font-supercellMagic">
       <div>Hejsan vafan</div>
-      <Image url={`../public/img/equipment/${king[0].img}`} />
+      <Image url={`./img/equipment/${king[0].img}`} />
     </div>
   );
 };

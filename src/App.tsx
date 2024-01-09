@@ -1,4 +1,3 @@
-import Image from './Image';
 import king from './assets/data/equipment/barbarian_king.json';
 
 const App = () => {
@@ -7,7 +6,7 @@ const App = () => {
   return (
     <div className="font-supercellMagic">
       <div>Hejsan vafan</div>
-      <Image url={`./img/equipment/${king[0].img}`} />
+      <img src={king[0].img} alt="" />
     </div>
   );
 };

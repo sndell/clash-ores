@@ -3,6 +3,32 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'supercell-magic';
-  src: url('../assets/font/supercell-magic-webfont.ttf');
+  font-family: 'supercell-magic-numbers';
+  src: url('../assets/font/supercell-magic-numbers.ttf');
+}
+
+@font-face {
+  font-family: 'supercell-magic-text';
+  src: url('../assets/font/supercell-magic-text.ttf');
+}
+
+@layer base {
+  * {
+    @apply font-supercellMagicText;
+  }
+
+  body {
+    @apply bg-center bg-cover bg-background;
+  }
+
+  /* Remove input type number styling */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
 }

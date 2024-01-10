@@ -1,15 +1,13 @@
-import king from './assets/data/equipment/barbarian_king.json';
+import { MainLayout } from './components/Layout';
+import { Calculator } from './features/calculator/components/Calculator';
+import { CalculatorResult } from './features/calculator/components/CalculatorResult';
 
 const App = () => {
   return (
-    <div className="font-supercellMagic">
-      {king.map((item) => (
-        <>
-          <div>{item.name}</div>
-          <img src={item.img} />
-        </>
-      ))}
-    </div>
+    <MainLayout>
+      <Calculator />
+      <CalculatorResult />
+    </MainLayout>
   );
 };
 

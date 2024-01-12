@@ -17,8 +17,14 @@ export const CalculatorModal = ({ item, level, close }: Props) => {
   const ores = calculateOres(data, level);
 
   return (
-    <div className="absolute inset-0 grid p-2 place-content-center h-dscreen grid-cols-[minmax(auto,600px)] backdrop-blur-sm bg-black/50">
-      <div className="flex flex-col flex-1 max-w-xl gap-4 p-4 overflow-hidden border bg-secondary/50 rounded-2xl backdrop-blur-lg border-primary">
+    <div
+      onMouseDown={close}
+      className="absolute inset-0 grid p-2 place-content-center h-dscreen grid-cols-[minmax(auto,600px)] bg-black/50"
+    >
+      <div
+        onMouseDown={(e) => e.stopPropagation()}
+        className="flex flex-col flex-1 max-w-xl gap-4 p-4 overflow-hidden border bg-secondary/50 rounded-2xl backdrop-blur-lg border-primary"
+      >
         <div className="flex flex-col gap-2">
           <div className="flex justify-between gap-2">
             <div className="flex items-center gap-2">
@@ -37,8 +43,8 @@ export const CalculatorModal = ({ item, level, close }: Props) => {
           </div>
           <CalculatorResult ores={ores} />
         </div>
-        <div className="flex flex-col gap-2 p-2 overflow-y-auto border no-scrollbar bg-primary/50 rounded-2xl border-primary">
-          <div className="grid items-center grid-cols-4 gap-2 text-xs text-primaryLight">
+        <div className="flex flex-col gap-1.5 p-2 pb-1 overflow-y-auto border no-scrollbar bg-primary/50 rounded-2xl border-primary">
+          <div className="grid items-center grid-cols-[10fr,13fr,10fr,10fr] max-[470px]:grid-cols-[4fr,4fr,4fr,1fr] text-xs text-primaryLight">
             <div>Level</div>
             <div className="flex items-center gap-2">
               <img
@@ -67,8 +73,8 @@ export const CalculatorModal = ({ item, level, close }: Props) => {
           </div>
           <div className="w-full min-h-[1px] bg-separator" />
           {data.map((stage, index) => (
-            <Fragment key={'test-' + index}>
-              <div className="grid grid-cols-4 gap-2 text-base text-primary">
+            <Fragment key={index}>
+              <div className="grid grid-cols-[10fr,13fr,10fr,10fr] max-[470px]:grid-cols-[4fr,4fr,4fr,1fr] gap-2 text-base text-primary">
                 <div className="font-supercellMagicNumbers">{index + 1}</div>
                 <div className="pl-1.5 font-supercellMagicNumbers">
                   {stage.shiny}

@@ -1,4 +1,4 @@
-import { Category } from '..';
+import { Category } from '../types';
 import { CalculatorItem } from './CalculatorItem';
 
 export const CalculatorCategory = ({ equipment, name }: Category) => {

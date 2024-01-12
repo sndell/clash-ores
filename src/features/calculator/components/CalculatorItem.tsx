@@ -1,29 +1,22 @@
 import { useEffect, useState } from 'react';
-import { Equipment, Ore } from '..';
 import epic from '../../../assets/data/rarities/epic.json';
 import common from '../../../assets/data/rarities/common.json';
 import { useOresStore } from '../../../stores/ores';
-// import { Icon } from '@iconify/react';
+import { createPortal } from 'react-dom';
+import { CalculatorModal } from './CalculatorModal';
+import { Equipment } from '../types';
+import { calculateOres } from '../utils/calculateOres';
 
 export const CalculatorItem = ({ item }: { item: Equipment }) => {
   const [lvl, setLvl] = useState<number>(() => {
     const savedLvl = localStorage.getItem(`lvl_${item.name}`);
     return savedLvl ? parseInt(savedLvl, 10) : 0;
   });
+  const [isActive, setIsActive] = useState(false);
   const { updateItem } = useOresStore();
 
-  const calculateOres = (data: Ore[], startIndex: number) => {
-    const ores = data.slice(startIndex).reduce(
-      (totals, ore) => {
-        totals.shiny += ore.shiny;
-        totals.glowy += ore.glowy;
-        totals.starry += ore.starry;
-        return totals;
-      },
-      { shiny: 0, glowy: 0, starry: 0 }
-    );
-
-    return ores;
+  const toggleActive = () => {
+    setIsActive((state) => !state);
   };
 
   const updateOres = () => {
@@ -100,12 +93,20 @@ export const CalculatorItem = ({ item }: { item: Equipment }) => {
           </div>
         </div>
       </div>
-      {/* <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2">
         <div className="h-full bg-separator w-[1px]" />
-        <div className="text-xs transition-colors cursor-pointer text-primary hover:text-primaryLight">
+        <button
+          onClick={toggleActive}
+          className="text-xs transition-colors cursor-pointer text-primary hover:text-primaryLight"
+        >
           View
-        </div>
-      </div> */}
+        </button>
+      </div>
+      {isActive &&
+        createPortal(
+          <CalculatorModal item={item} level={lvl} close={toggleActive} />,
+          document.body
+        )}
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { createPortal } from 'react-dom';
 import { CalculatorModal } from './CalculatorModal';
 import { Equipment } from '../types';
 import { calculateOres } from '../utils/calculateOres';
-import { Icon } from '@iconify/react/dist/iconify.js';
+// import { Icon } from '@iconify/react/dist/iconify.js';
 
 export const CalculatorItem = ({ item }: { item: Equipment }) => {
   const [lvl, setLvl] = useState<number>(() => {
@@ -47,18 +47,18 @@ export const CalculatorItem = ({ item }: { item: Equipment }) => {
   //   else if (mode === 'minus' && lvl > 0) setLvl((old) => (old -= 1));
   // };
 
-  const handleClick = (action: 'plus' | 'minus') => {
-    switch (action) {
-      case 'plus':
-        if (lvl + 1 <= item.max_lvl) setLvl((state) => (state += 1));
-        break;
-      case 'minus':
-        if (lvl - 1 >= 0) setLvl((state) => (state -= 1));
-        break;
-      default:
-        break;
-    }
-  };
+  // const handleClick = (action: 'plus' | 'minus') => {
+  //   switch (action) {
+  //     case 'plus':
+  //       if (lvl + 1 <= item.max_lvl) setLvl((state) => (state += 1));
+  //       break;
+  //     case 'minus':
+  //       if (lvl - 1 >= 0) setLvl((state) => (state -= 1));
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  // };
 
   return (
     <div className="flex gap-2 p-2 border rounded-2xl bg-primary/50 border-primary">

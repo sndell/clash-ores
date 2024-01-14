@@ -72,14 +72,14 @@ export const CalculatorItem = ({ item }: { item: Equipment }) => {
           {item.name}
         </div>
         <div className="flex items-center gap-2">
-          {/* <input
+          <input
             type="number"
             value={lvl.toString()}
             onChange={handleChange}
             // onFocus={handleFocus}
             className="flex w-12 text-center rounded-lg outline-none font-supercellMagicNumbers"
-          /> */}
-          <div className="flex gap-1 text-secondary">
+          />
+          {/* <div className="flex gap-1 text-secondary">
             <button
               onClick={() => handleClick('minus')}
               className="px-2 rounded-lg cursor-pointer bg-accent"
@@ -98,7 +98,7 @@ export const CalculatorItem = ({ item }: { item: Equipment }) => {
             >
               <Icon icon="typcn:plus" />
             </button>
-          </div>
+          </div> */}
           <div className="text-xs text-primary">
             /{' '}
             <span className="text-base font-supercellMagicNumbers">

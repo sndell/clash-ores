@@ -6,6 +6,7 @@ import { createPortal } from 'react-dom';
 import { CalculatorModal } from './CalculatorModal';
 import { Equipment } from '../types';
 import { calculateOres } from '../utils/calculateOres';
+import { Icon } from '@iconify/react/dist/iconify.js';
 
 export const CalculatorItem = ({ item }: { item: Equipment }) => {
   const [lvl, setLvl] = useState<number>(() => {
@@ -46,6 +47,19 @@ export const CalculatorItem = ({ item }: { item: Equipment }) => {
   //   else if (mode === 'minus' && lvl > 0) setLvl((old) => (old -= 1));
   // };
 
+  const handleClick = (action: 'plus' | 'minus') => {
+    switch (action) {
+      case 'plus':
+        if (lvl + 1 <= item.max_lvl) setLvl((state) => (state += 1));
+        break;
+      case 'minus':
+        if (lvl - 1 >= 0) setLvl((state) => (state -= 1));
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <div className="flex gap-2 p-2 border rounded-2xl bg-primary/50 border-primary">
       <img
@@ -58,17 +72,17 @@ export const CalculatorItem = ({ item }: { item: Equipment }) => {
           {item.name}
         </div>
         <div className="flex items-center gap-2">
-          <input
+          {/* <input
             type="number"
             value={lvl.toString()}
             onChange={handleChange}
             // onFocus={handleFocus}
             className="flex w-12 text-center rounded-lg outline-none font-supercellMagicNumbers"
-          />
-          {/* <div className="flex px-2 rounded-lg bg-accent text-secondary">
+          /> */}
+          <div className="flex gap-1 text-secondary">
             <button
               onClick={() => handleClick('minus')}
-              className="cursor-pointer"
+              className="px-2 rounded-lg cursor-pointer bg-accent"
             >
               <Icon icon="typcn:minus" />
             </button>
@@ -76,15 +90,15 @@ export const CalculatorItem = ({ item }: { item: Equipment }) => {
               type="number"
               value={lvl.toString()}
               onChange={handleChange}
-              className="flex w-8 py-1 text-center bg-transparent outline-none"
+              className="flex w-12 text-center rounded-lg outline-none font-supercellMagicNumbers"
             />
             <button
               onClick={() => handleClick('plus')}
-              className="cursor-pointer"
+              className="px-2 rounded-lg cursor-pointer bg-accent"
             >
               <Icon icon="typcn:plus" />
             </button>
-          </div> */}
+          </div>
           <div className="text-xs text-primary">
             /{' '}
             <span className="text-base font-supercellMagicNumbers">

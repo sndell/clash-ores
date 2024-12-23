@@ -41,21 +41,11 @@ A web application to calculate the ores needed to max out your equipment in Clas
    ```
    npm install
    ```
-   or
-   ```
-   yarn install
-   ```
 
 ### Running the Development Server
 
 ```
 npm run dev
-```
-
-or
-
-```
-yarn dev
 ```
 
 The application will be available at `http://localhost:5173`.
@@ -64,12 +54,6 @@ The application will be available at `http://localhost:5173`.
 
 ```
 npm run build
-```
-
-or
-
-```
-yarn build
 ```
 
 ## Contributing

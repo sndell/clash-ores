@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: hsla(0, 0%, 0%, 0.4);
+  --secondary: hsla(0, 0%, 100%, 0.9);
+  --accent: hsla(244, 61%, 52%, 0.9);
+  --text-primary: hsl(0, 0%, 100%);
+  --text-primary-dark: hsl(0, 1%, 65%);
+  --text-primary-light: hsl(0, 0%, 73%);
+  --text-secondary: hsl(0, 0%, 0%);
+  --border-primary: hsla(0, 0%, 100%, 0.055);
+  --border-secondary: hsla(0, 0%, 22%, 0.555);
+  --border-accent: hsla(239, 100%, 68%, 0.445);
+}
+
+body {
+  color: var(--text-primary);
+  background-image: url('../public/images/misc/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number'] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
+  }
+}
+
+@layer utilities {
+  .center-text {
+    @apply transform translate-y-0.5;
+  }
+
+  .scrollbar-slim::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .scrollbar-slim::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-slim::-webkit-scrollbar-thumb {
+    background-color: hsla(0, 0%, 100%, 0.274);
+    border-radius: 99px;
+    /* border: 1px solid transparent;  */
+    background-clip: padding-box;
+  }
+
+  .scrollbar-slim::-webkit-scrollbar-button {
+    display: none;
+  }
+}

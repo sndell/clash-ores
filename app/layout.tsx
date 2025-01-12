@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import localFont from 'next/font/local';
-
-const font = localFont({ src: '../fonts/Clash_Regular.otf' });
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: 'Ore Calculator',
@@ -26,6 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
+const font = localFont({ src: '../fonts/Clash_Regular.otf' });
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -38,6 +39,7 @@ export default function RootLayout({
         <div id="modal-root" />
         {children}
       </body>
+      <GoogleAnalytics gaId="G-9J3ZNM8FWP" />
     </html>
   );
 }

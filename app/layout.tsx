@@ -5,10 +5,12 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: 'Ore Calculator',
-  description: 'A simple tool for Clash of Clans to calculate how many ores are remaining until you max all of your equipment.',
+  description:
+    'A simple tool for Clash of Clans to calculate how many ores are remaining until you max all of your hero equipment.',
   openGraph: {
     title: 'Ore Calculator',
-    description: 'A simple tool for Clash of Clans to calculate how many ores are remaining until you max all of your equipment.',
+    description:
+      'A simple tool for Clash of Clans to calculate how many ores are remaining until you max all of your hero equipment.',
     url: 'https://ore.sundell.dev',
     siteName: 'Ore Calculator',
     images: [
@@ -35,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${font.className} antialiased`}>
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" />
+        <div className="fixed inset-0 bg-primary backdrop-blur-sm" />
         <div id="modal-root" />
         {children}
       </body>

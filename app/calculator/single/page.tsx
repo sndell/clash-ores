@@ -12,47 +12,6 @@ export default function Page() {
     <div id="single-page" className="grid place-items-center px-3 pt-3 pb-19 h-dvh">
       <div className="absolute inset-0 backdrop-blur-sm h-dvh bg-primary" />
       <div className="flex overflow-hidden relative flex-col space-y-3 w-full h-full sm:max-w-96">
-        <div className="overflow-y-auto overflow-x-hidden flex-1 rounded-2xl border backdrop-blur-xl scrollbar-slim bg-primary border-primary">
-          <table className="w-full border-collapse table-auto">
-            <thead className="sticky top-0 z-10 bg-black border-b border-primary">
-              <tr>
-                <th className="p-3 center-text">Level</th>
-                <th>
-                  <div className="flex gap-1 justify-center items-center p-3 center-text max-xs:flex-col">
-                    <Image src="/images/ores/Shiny.webp" alt="Shiny ore" width={20} height={20} />
-                    Shiny
-                  </div>
-                </th>
-                <th>
-                  <div className="flex gap-1 justify-center items-center p-3 center-text max-xs:flex-col">
-                    <Image src="/images/ores/Glowy.webp" alt="Glowy ore" width={20} height={20} />
-                    Glowy
-                  </div>
-                </th>
-                {selectedRarity === "epic" && (
-                  <th>
-                    <div className="flex gap-1 justify-center items-center p-3 center-text max-xs:flex-col">
-                      <Image src="/images/ores/Starry.webp" alt="Starry ore" width={20} height={20} />
-                      Starry
-                    </div>
-                  </th>
-                )}
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-primary">
-              {equipmentCost[selectedRarity].map((item, index) => (
-                <tr key={index} className="text-center border-primary">
-                  <td className="p-1 center-text text-primary-dark">{index + 1}</td>
-                  <td className="p-1 center-text">{item.shiny}</td>
-                  <td className={cn("p-1 center-text", item.glowy === 0 && "text-primary-dark")}>{item.glowy}</td>
-                  {selectedRarity === "epic" && (
-                    <td className={cn("p-1 center-text", item.starry === 0 && "text-primary-dark")}>{item.starry}</td>
-                  )}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
         <div className="space-y-3 rounded-2xl bg-gradient-to-t from-stone-800 to-stone-500 pb-2 pt-[1px] border-2 border-black">
           <div className="p-3 space-y-3 rounded-2xl bg-stone-700">
             <div className="flex flex-col gap-1 text-sm">
@@ -104,6 +63,47 @@ export default function Page() {
               </div>
             </div>
           </div>
+        </div>
+        <div className="overflow-y-auto overflow-x-hidden flex-1 rounded-2xl border backdrop-blur-xl scrollbar-slim bg-primary border-primary">
+          <table className="w-full border-collapse table-auto">
+            <thead className="sticky top-0 z-10 bg-black border-b border-primary">
+              <tr>
+                <th className="p-3 center-text">Level</th>
+                <th>
+                  <div className="flex gap-1 justify-center items-center p-3 center-text max-xs:flex-col">
+                    <Image src="/images/ores/Shiny.webp" alt="Shiny ore" width={20} height={20} />
+                    Shiny
+                  </div>
+                </th>
+                <th>
+                  <div className="flex gap-1 justify-center items-center p-3 center-text max-xs:flex-col">
+                    <Image src="/images/ores/Glowy.webp" alt="Glowy ore" width={20} height={20} />
+                    Glowy
+                  </div>
+                </th>
+                {selectedRarity === "epic" && (
+                  <th>
+                    <div className="flex gap-1 justify-center items-center p-3 center-text max-xs:flex-col">
+                      <Image src="/images/ores/Starry.webp" alt="Starry ore" width={20} height={20} />
+                      Starry
+                    </div>
+                  </th>
+                )}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-primary">
+              {equipmentCost[selectedRarity].map((item, index) => (
+                <tr key={index} className="text-center border-primary">
+                  <td className="p-1 center-text text-primary-dark">{index + 1}</td>
+                  <td className="p-1 center-text">{item.shiny}</td>
+                  <td className={cn("p-1 center-text", item.glowy === 0 && "text-primary-dark")}>{item.glowy}</td>
+                  {selectedRarity === "epic" && (
+                    <td className={cn("p-1 center-text", item.starry === 0 && "text-primary-dark")}>{item.starry}</td>
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

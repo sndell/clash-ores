@@ -57,7 +57,9 @@ const NavButton = ({ pathname }: { pathname: string }) => {
           {isNavMenuOpen && <NavMenu openAccountModal={openAccountModal} close={closeNavMenu} buttonRef={buttonRef} />}
         </AnimatePresence>
       </button>
-      <AnimatePresence>{isAccountModalOpen && <AccountModal close={closeAccountModal} />}</AnimatePresence>
+      <AnimatePresence>
+        {isAccountModalOpen && pathname === '/calculator/all' && <AccountModal close={closeAccountModal} />}
+      </AnimatePresence>
     </>
   );
 };

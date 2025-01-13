@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import localFont from 'next/font/local';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Ore Calculator',
@@ -37,9 +38,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${font.className} antialiased`}>
-        <div className="fixed inset-0 bg-primary backdrop-blur-sm" />
-        <div id="modal-root" />
         {children}
+        <Footer />
       </body>
       <GoogleAnalytics gaId="G-9J3ZNM8FWP" />
     </html>

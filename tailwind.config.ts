@@ -30,7 +30,7 @@ export default {
         19: '4.75rem',
       },
       screens: {
-        xs: '420px',
+        xs: '380px',
       },
     },
   },

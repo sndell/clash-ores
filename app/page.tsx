@@ -1,4 +1,3 @@
-import { Footer } from '@/components/Footer';
 import { HeroCard } from '@/components/HeroCard';
 import { HeroGrid } from '@/components/HeroGrid';
 import {
@@ -11,7 +10,8 @@ import {
 
 export default function Page() {
   return (
-    <div className="relative flex flex-col h-dvh">
+    <div id="all-page" className="relative flex flex-col h-dvh">
+      <div className="absolute h-dvh inset-0 bg-primary backdrop-blur-sm" />
       <HeroGrid>
         <HeroCard equipment={barbarianKingEquipment} title="Barbarian King" />
         <HeroCard equipment={archerQueenEquipment} title="Archer Queen" />
@@ -19,7 +19,6 @@ export default function Page() {
         <HeroCard equipment={royalChampionEquipment} title="Royal Champion" />
         <HeroCard equipment={minionPrinceEquipment} title="Minion Prince" />
       </HeroGrid>
-      <Footer />
     </div>
   );
 }

@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import localFont from 'next/font/local';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Ore Calculator',
@@ -36,12 +35,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${font.className} antialiased`}>
-        {children}
-        <Footer />
-      </body>
-      <GoogleAnalytics gaId="G-9J3ZNM8FWP" />
+    <html lang='en'>
+      <body className={`${font.className} antialiased`}>{children}</body>
+      <GoogleAnalytics gaId='G-9J3ZNM8FWP' />
     </html>
   );
 }

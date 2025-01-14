@@ -21,24 +21,24 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#all-page {
-  background-image: url("../public/images/misc/background1.jpg");
+/* #all-page {
+  background-image: url('../public/images/misc/background1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 #single-page {
-  background-image: url("../public/images/misc/background2.png");
+  background-image: url('../public/images/misc/background2.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
+} */
 
 @layer base {
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"] {
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number'] {
     -webkit-appearance: none;
     margin: 0;
     -moz-appearance: textfield !important;

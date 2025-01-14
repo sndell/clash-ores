@@ -67,6 +67,7 @@ const NavButton = ({ pathname }: { pathname: string }) => {
 const NAV_LINKS = [
   { label: 'Single equipment', href: '/calculator/single' },
   { label: 'All equipments', href: '/calculator/all' },
+  { label: 'Homepage', href: '/' },
 ];
 
 const NavMenu = ({

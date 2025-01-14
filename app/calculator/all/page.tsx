@@ -9,7 +9,7 @@ import { HeroCard, HeroGrid } from '@/features/max-calculator';
 
 export default function Page() {
   return (
-    <div id='all-page' className='flex relative flex-col h-dvh'>
+    <div className='flex relative flex-col h-dvh bg-background1'>
       <div className='absolute inset-0 backdrop-blur-sm h-dvh bg-primary' />
       <HeroGrid>
         <HeroCard equipment={barbarianKingEquipment} title='Barbarian King' />

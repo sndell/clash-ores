@@ -68,4 +68,10 @@ body {
   .scrollbar-slim::-webkit-scrollbar-button {
     display: none;
   }
+
+  .halftone {
+    background-image: radial-gradient(#1f1f1f 1.5px, transparent 1.5px);
+    background-size: 64px 64px;
+    background-color: #131111;
+  }
 }

@@ -54,11 +54,19 @@ const NavButton = ({ pathname }: { pathname: string }) => {
         <div className='overflow-hidden absolute inset-0 rounded-full backdrop-blur-xl' />
         <span className='icon-[solar--hamburger-menu-linear] text-2xl' />
         <AnimatePresence>
-          {isNavMenuOpen && <NavMenu openAccountModal={openAccountModal} close={closeNavMenu} buttonRef={buttonRef} />}
+          {isNavMenuOpen && (
+            <NavMenu
+              openAccountModal={openAccountModal}
+              close={closeNavMenu}
+              buttonRef={buttonRef}
+            />
+          )}
         </AnimatePresence>
       </button>
       <AnimatePresence>
-        {isAccountModalOpen && pathname === '/calculator/all' && <AccountModal close={closeAccountModal} />}
+        {isAccountModalOpen && pathname === '/calculator/all' && (
+          <AccountModal close={closeAccountModal} />
+        )}
       </AnimatePresence>
     </>
   );
@@ -87,8 +95,10 @@ const NavMenu = ({
       console.log('yes');
 
       if (ref.current && buttonRef.current) {
-        const isButtonClicked = buttonRef.current && buttonRef.current.contains(event.target as Node);
-        const isMenuClicked = ref.current && ref.current.contains(event.target as Node);
+        const isButtonClicked =
+          buttonRef.current && buttonRef.current.contains(event.target as Node);
+        const isMenuClicked =
+          ref.current && ref.current.contains(event.target as Node);
 
         if (!isButtonClicked && !isMenuClicked) {
           close();
@@ -118,7 +128,9 @@ const NavMenu = ({
         exit={{ opacity: 0 }}
         className='flex flex-col divide-y divide-primary text-start'
       >
-        {pathname === '/calculator/all' && <AccountButton openAccountModal={openAccountModal} />}
+        {pathname === '/calculator/all' && (
+          <AccountButton openAccountModal={openAccountModal} />
+        )}
         {NAV_LINKS.map(({ label, href }) => {
           const isActive = pathname === href;
           return (
@@ -146,7 +158,13 @@ const OreResult = ({ pathname }: { pathname: string }) => {
 
   return (
     <OreDisplay
-      ores={pathname === '/calculator/single' ? upgradeOres : pathname === '/upgrades/all' ? maxOres : maxOres}
+      ores={
+        pathname === '/calculator/single'
+          ? upgradeOres
+          : pathname === '/upgrades/all'
+          ? maxOres
+          : maxOres
+      }
     />
   );
 };
@@ -155,15 +173,33 @@ const OreDisplay = ({ ores }: { ores: Ores }) => {
   return (
     <div className='flex items-center justify-center gap-6 px-4 pt-[2px] overflow-hidden border rounded-full bg-primary border-primary backdrop-blur-xl max-sm:flex-1'>
       <div className='flex gap-2 items-center max-xs:flex-col max-xs:gap-1'>
-        <Image src='/images/ores/Shiny.webp' alt='Shiny' width={24} height={24} className='object-contain' />
+        <Image
+          src='/images/ores/Shiny.webp'
+          alt='Shiny'
+          width={24}
+          height={24}
+          className='object-contain'
+        />
         {ores.shiny}
       </div>
       <div className='flex gap-2 items-center max-xs:flex-col max-xs:gap-1'>
-        <Image src='/images/ores/Glowy.webp' alt='Glowy' width={24} height={24} className='object-contain' />
+        <Image
+          src='/images/ores/Glowy.webp'
+          alt='Glowy'
+          width={24}
+          height={24}
+          className='object-contain'
+        />
         {ores.glowy}
       </div>
       <div className='flex gap-2 items-center max-xs:flex-col max-xs:gap-1'>
-        <Image src='/images/ores/Starry.webp' alt='Starry' width={24} height={24} className='object-contain' />
+        <Image
+          src='/images/ores/Starry.webp'
+          alt='Starry'
+          width={24}
+          height={24}
+          className='object-contain'
+        />
         {ores.starry}
       </div>
     </div>

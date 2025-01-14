@@ -1,6 +1,6 @@
 'use client';
 
-import { getEquipmentData } from '@/actions/getAccountData';
+import { getEquipmentData } from '@/features/max-calculator';
 import { useOresStore } from '@/store/ores';
 import { sendGAEvent } from '@next/third-parties/google';
 import { useState } from 'react';
@@ -47,7 +47,7 @@ export const AccountModal = ({ close }: { close: () => void }) => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.1 }}
       onMouseDown={close}
-      className='absolute inset-0 z-50 grid px-2 place-content-center bg-black/60'
+      className='grid absolute inset-0 z-50 place-content-center px-2 bg-black/60'
     >
       <motion.div
         initial={{ scale: 0.95 }}
@@ -55,7 +55,7 @@ export const AccountModal = ({ close }: { close: () => void }) => {
         exit={{ scale: 0.95 }}
         transition={{ duration: 0.1 }}
         onMouseDown={(e) => e.stopPropagation()}
-        className='w-full p-3 overflow-hidden border rounded-2xl backdrop-blur-xl bg-primary border-primary max-w-96 max-sm:max-w-full'
+        className='overflow-hidden p-3 w-full rounded-2xl border backdrop-blur-xl bg-primary border-primary max-w-96 max-sm:max-w-full'
       >
         <div className='pt-3 pb-6 space-y-1'>
           <div className='text-center'>Load equipment data</div>

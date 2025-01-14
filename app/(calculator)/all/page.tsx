@@ -6,6 +6,12 @@ import {
   royalChampionEquipment,
 } from '@/data';
 import { HeroCard, HeroGrid } from '@/features/max-calculator';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Ore Calculator - Max',
+  description: 'Calculate ore cost to max all equipments. Import your equipments automatically',
+};
 
 export default function Page() {
   return (

@@ -5,6 +5,7 @@ import { useOresStore } from '@/store/ores';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { NavButton } from './NavButton';
+import { useGainStore } from '@/features/gain-calculator';
 
 export const Footer = () => {
   const pathname = usePathname();
@@ -20,8 +21,11 @@ export const Footer = () => {
 const OreResult = ({ pathname }: { pathname: string }) => {
   const { ores: maxOres } = useOresStore();
   const { ores: upgradeOres } = useUpgradeStore();
+  const { ores: gainOres } = useGainStore();
 
-  return <OreDisplay ores={pathname === '/single' ? upgradeOres : pathname === '/all' ? maxOres : maxOres} />;
+  const selectedOres = pathname === '/single' ? upgradeOres : pathname === '/all' ? maxOres : gainOres;
+
+  return <OreDisplay ores={selectedOres} />;
 };
 
 const OreDisplay = ({ ores }: { ores: Ores }) => {

@@ -28,8 +28,6 @@ export const NavMenu = ({
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      console.log('yes');
-
       if (ref.current && buttonRef.current) {
         const isButtonClicked = buttonRef.current && buttonRef.current.contains(event.target as Node);
         const isMenuClicked = ref.current && ref.current.contains(event.target as Node);

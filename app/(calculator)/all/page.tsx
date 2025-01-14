@@ -4,7 +4,7 @@ import {
   grandWardenEquipment,
   minionPrinceEquipment,
   royalChampionEquipment,
-} from '@/data';
+} from '@/data/equipment';
 import { HeroCard, HeroGrid } from '@/features/max-calculator';
 import { Metadata } from 'next';
 

@@ -15,7 +15,7 @@ export const HeroGrid = ({ children }: Props) => {
   const { height: elementHeight } = useElementSize(ref);
 
   return (
-    <div className="flex flex-col flex-1 overflow-auto justify-evenly scrollbar-slim">
+    <div className='flex overflow-auto flex-col flex-1 justify-evenly scrollbar-slim'>
       <div
         ref={ref}
         className={cn(

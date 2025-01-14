@@ -2,7 +2,12 @@ import type { Config } from 'tailwindcss';
 import { addDynamicIconSelectors } from '@iconify/tailwind';
 
 export default {
-  content: ['./pages/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './features/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
   theme: {
     extend: {
       backgroundColor: {
@@ -30,7 +35,14 @@ export default {
         19: '4.75rem',
       },
       screens: {
-        xs: '420px',
+        xs: '380px',
+      },
+      backgroundImage: {
+        background1: "url('../public/images/misc/background1.jpg')",
+        background2: "url('../public/images/misc/background2.png')",
+        background3: "url('../public/images/misc/background3.jpg')",
+        all: "url('../public/images/misc/all.jpg')",
+        single: "url('../public/images/misc/single.png')",
       },
     },
   },

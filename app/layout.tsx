@@ -5,25 +5,15 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: 'Ore Calculator',
-  description:
-    'A simple tool for Clash of Clans to calculate how many ores are remaining until you max all of your hero equipment.',
+  description: 'Calculate ore cost to max all equipments, a single equipment or how many ores you can gain per day.',
   openGraph: {
     title: 'Ore Calculator',
-    description:
-      'A simple tool for Clash of Clans to calculate how many ores are remaining until you max all of your hero equipment.',
-    url: 'https://ore.sundell.dev',
+    description: 'Calculate ore cost to max all equipments, a single equipment or how many ores you can gain per day.',
+    url: 'https://ores.sundell.dev',
     siteName: 'Ore Calculator',
-    images: [
-      {
-        url: 'https://ore.sundell.dev/images/equipment/Archer_Puppet.png',
-      },
-      {
-        url: 'https://ore.sundell.dev/images/equipment/Barbarian_Puppet.png',
-      },
-      {
-        url: 'https://ore.sundell.dev/images/equipment/Earthquake_Boots.png',
-      },
-    ],
+  },
+  alternates: {
+    canonical: 'https://ores.sundell.dev',
   },
 };
 
@@ -35,13 +25,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${font.className} antialiased`}>
-        <div className="fixed inset-0 bg-primary backdrop-blur-sm" />
-        <div id="modal-root" />
-        {children}
-      </body>
-      <GoogleAnalytics gaId="G-9J3ZNM8FWP" />
+    <html lang='en'>
+      <body className={`${font.className} antialiased`}>{children}</body>
+      <GoogleAnalytics gaId='G-9J3ZNM8FWP' />
     </html>
   );
 }

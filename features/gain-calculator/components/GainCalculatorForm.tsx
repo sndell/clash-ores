@@ -256,7 +256,7 @@ const Slider = ({ value, onChange, min, max, step = 1, markers, displayValue }: 
           step={step}
           value={value}
           onChange={(e) => handleChange(Number(e.target.value))}
-          className='w-full h-2 bg-transparent rounded-lg appearance-none cursor-pointer'
+          className='w-full h-4 bg-transparent rounded-lg appearance-none cursor-pointer'
         />
       </div>
       <div className='mt-1'>

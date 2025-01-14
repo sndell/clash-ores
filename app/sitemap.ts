@@ -4,19 +4,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: 'https://ores.sundell.dev',
-      lastModified: '2025-01-14',
+      lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 1,
     },
     {
       url: 'https://ores.sundell.dev/all',
-      lastModified: '2025-01-13',
+      lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: 'https://ores.sundell.dev/single',
-      lastModified: '2025-01-14',
+      lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.9,
     },

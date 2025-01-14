@@ -1,11 +1,10 @@
 'use client';
 
 import { AccountModal } from '@/features/max-calculator';
-
 import { sendGAEvent } from '@next/third-parties/google';
 import { AnimatePresence } from 'motion/react';
 import { useRef, useState } from 'react';
-import { NavMenu } from './NavModal';
+import { NavMenu } from './NavMenu';
 
 export const NavButton = ({ pathname }: { pathname: string }) => {
   const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);

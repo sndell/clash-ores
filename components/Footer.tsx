@@ -4,7 +4,7 @@ import { useUpgradeStore } from '@/features/upgrade-calculator';
 import { useOresStore } from '@/store/ores';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { NavButton } from './Nav';
+import { NavButton } from './NavButton.tsx';
 
 export const Footer = () => {
   const pathname = usePathname();

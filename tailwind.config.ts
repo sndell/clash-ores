@@ -44,6 +44,9 @@ export default {
         all: "url('../public/images/misc/all.jpg')",
         single: "url('../public/images/misc/single.png')",
       },
+      accentColor: {
+        accent: 'var(--accent)',
+      },
     },
   },
   plugins: [addDynamicIconSelectors()],

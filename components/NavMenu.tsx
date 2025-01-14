@@ -8,9 +8,10 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from 'react';
 
 const NAV_LINKS = [
+  { label: 'Homepage', href: '/' },
   { label: 'Single equipment', href: '/single' },
   { label: 'All equipments', href: '/all' },
-  { label: 'Homepage', href: '/' },
+  { label: 'Ore gain calculator', href: '/gain' },
 ];
 
 export const NavMenu = ({

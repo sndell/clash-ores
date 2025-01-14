@@ -25,7 +25,7 @@ const Hero = () => (
 const Links = () => (
   <div className='grid grid-cols-1 gap-3 px-3 w-full max-w-5xl'>
     <Link
-      href='/calculator/all'
+      href='/all'
       className='bg-center bg-cover rounded-xl border-2 backdrop-blur-xl bg-primary border-black/30 bg-background1'
     >
       <div className='py-4   rounded-[10px]  bg-black/50 w-full'>
@@ -35,7 +35,7 @@ const Links = () => (
       </div>
     </Link>
     <Link
-      href='/calculator/single'
+      href='/single'
       className='bg-center bg-cover rounded-xl border-2 backdrop-blur-xl bg-primary border-white/10 bg-background2'
     >
       <div className='justify-center py-4 w-full rounded-xl bg-black/10'>

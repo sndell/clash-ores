@@ -2,9 +2,10 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Clash of Clans Ore Calculator',
+    name: 'Clash of Clans Ore Calculator - Max Your Equipment',
     short_name: 'Ore Calculator',
-    description: 'A simple tool for Clash of Clans to calculate how many ores are remaining until you max all of your equipment.',
+    description:
+      'Calculate how many ores are remaining until you max all of your equipment in Clash of Clans. A simple but powerful tool.',
     start_url: '/',
     display: 'standalone',
     background_color: '#000',

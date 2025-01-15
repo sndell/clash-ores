@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Ore Calculator - Gain',
-  description: 'Enter your detailsand calculate how many ores you can gain per week.',
+  description: 'Enter your details and calculate how many ores you can gain per week.',
 };
 
 export default function Page() {

@@ -52,7 +52,7 @@ const ResourceDisplay = ({ value, type, mode }: ResourceDisplayProps) => {
         alt={type}
         width={24}
         height={24}
-        className='object-contain aspect-square'
+        className='object-contain aspect-square '
       />
       {oreAmount}
       {value > 0 && (
@@ -84,27 +84,23 @@ export const GainCalculatorForm = () => {
           Enter the details below to calculate how many ores you can gain per week
         </p>
       </header>
-
       <div className='divide-y divide-primary'>
         <Category label='Current trophies'>
           <Slider
             value={values.trophies}
             onChange={setters.setTrophies}
-            min={0}
+            min={400}
             max={5000}
             step={50}
             displayValue={(value) => <LeagueDisplay value={value} />}
           />
         </Category>
-
         <Category label='War Town Hall'>
           <Slider value={values.townHall} onChange={setters.setTownHall} min={8} max={17} markers={townHallMarkers} />
         </Category>
-
         <Category label='War attacks per week'>
           <Slider value={values.attacks} onChange={setters.setAttacks} min={0} max={7} markers={attackMarkers} />
         </Category>
-
         <Category label='War win ratio'>
           <Slider
             value={values.winRatio}
@@ -115,7 +111,6 @@ export const GainCalculatorForm = () => {
             displayValue={(value) => `${(value * 100).toFixed(0)}%`}
           />
         </Category>
-
         <Category label='Ores from Trader (raid medals)'>
           <div className='space-y-3'>
             {(Object.keys(values.traderMedal) as OreType[]).map((type) => (
@@ -131,7 +126,6 @@ export const GainCalculatorForm = () => {
             ))}
           </div>
         </Category>
-
         <Category label='Ores from Trader (gems)'>
           <div className='space-y-3'>
             {(Object.keys(values.traderGem) as OreType[]).map((type) => {

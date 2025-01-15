@@ -5,6 +5,7 @@ import { LEAGUE_TIERS, ORE_CONFIG_GEMS, ORE_CONFIG_MEDALS } from '../constants';
 import { capitalizeFirst, createRange } from '../utility';
 import { useGainCalculator } from '../hooks/useGainCalculator';
 import { Slider } from './Slider';
+import { cn } from '@/util/cn';
 
 interface LeagueDisplayProps {
   value: number;
@@ -54,7 +55,7 @@ const ResourceDisplay = ({ value, type, mode }: ResourceDisplayProps) => {
         height={24}
         className='object-contain aspect-square '
       />
-      {oreAmount}
+      <span className={cn(value === 0 && 'text-primary-dark text-base')}>{oreAmount}</span>
       {value > 0 && (
         <>
           <Image

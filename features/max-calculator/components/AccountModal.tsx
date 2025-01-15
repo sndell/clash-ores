@@ -1,7 +1,7 @@
 'use client';
 
 import { getEquipmentData } from '@/features/max-calculator';
-import { useOresStore } from '@/store/ores';
+import { useOresStore } from '@/features/max-calculator/stores/oreStore';
 import { sendGAEvent } from '@next/third-parties/google';
 import { useState } from 'react';
 import { createPortal } from 'react-dom';

@@ -1,2 +1,2 @@
 export * from './components/GainCalculatorForm';
-export * from './stores/gain';
+export * from './stores/gainStore';

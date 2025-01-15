@@ -9,8 +9,8 @@ import { useEffect, useRef } from 'react';
 
 const NAV_LINKS = [
   { label: 'Homepage', href: '/' },
-  { label: 'Single equipment', href: '/single' },
   { label: 'All equipments', href: '/all' },
+  { label: 'Single equipment', href: '/single' },
   { label: 'Ore gain calculator', href: '/gain' },
 ];
 

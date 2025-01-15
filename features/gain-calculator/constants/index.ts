@@ -35,8 +35,20 @@ export const LEAGUE_TIERS = [
   { maxTrophies: 9999, name: 'Legend', ores: { shiny: 1000, glowy: 54 } },
 ] as const;
 
-export const INITIAL_ORE_VALUES: OreValues = {
+export const ORES_PER_TH_WAR = {
+  8: { shiny: 380, glowy: 15, starry: 0 },
+  9: { shiny: 410, glowy: 18, starry: 0 },
+  10: { shiny: 460, glowy: 21, starry: 3 },
+  11: { shiny: 560, glowy: 24, starry: 3 },
+  12: { shiny: 610, glowy: 27, starry: 4 },
+  13: { shiny: 710, glowy: 30, starry: 4 },
+  14: { shiny: 810, glowy: 33, starry: 5 },
+  15: { shiny: 960, glowy: 36, starry: 5 },
+  16: { shiny: 1110, glowy: 39, starry: 6 },
+  17: { shiny: 1260, glowy: 39, starry: 6 },
+} as const;
+
+export const INITIAL_DAILY_ORES: DailyOres = {
   shiny: 0,
   glowy: 0,
-  starry: 0,
-};
+} as const;

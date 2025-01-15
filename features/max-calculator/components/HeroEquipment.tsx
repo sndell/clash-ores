@@ -1,6 +1,6 @@
 'use client';
 
-import { useEquipmentLevel } from '@/hooks/useEquipmentLevel';
+import { useEquipmentLevel } from '@/features/max-calculator/hooks/useEquipmentLevel';
 import Image from 'next/image';
 
 export const HeroEquipment = ({ name, imageUrl, type }: Equipment) => {

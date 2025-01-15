@@ -1,7 +1,7 @@
 'use client';
 
 import { useUpgradeStore } from '@/features/upgrade-calculator';
-import { useOresStore } from '@/store/ores';
+import { useOresStore } from '@/features/max-calculator/stores/oreStore';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { NavButton } from './NavButton';

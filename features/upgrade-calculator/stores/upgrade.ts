@@ -1,16 +1,6 @@
+import { INITIAL_ORES } from '@/constants';
 import { equipmentCost } from '@/data/equipment';
 import { create } from 'zustand';
-
-const INITIAL_ORES: Ores = {
-  shiny: 0,
-  glowy: 0,
-  starry: 0,
-};
-
-type UpgradeStore = {
-  ores: Ores;
-  calculateOres: (rarity: 'common' | 'epic', startLevel: number, endLevel: number) => void;
-};
 
 export const useUpgradeStore = create<UpgradeStore>((set) => ({
   ores: { ...INITIAL_ORES },

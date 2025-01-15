@@ -1,11 +1,6 @@
 import { create } from 'zustand';
 import { equipmentCost } from '@/data/equipment';
-
-const INITIAL_ORES: Ores = {
-  shiny: 0,
-  glowy: 0,
-  starry: 0,
-};
+import { INITIAL_ORES } from '@/constants';
 
 const calculateOres = (ores: Ores[]): Ores => {
   return ores.reduce(

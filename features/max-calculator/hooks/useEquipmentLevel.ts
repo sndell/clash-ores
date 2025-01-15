@@ -1,4 +1,4 @@
-import { useOresStore } from '@/store/ores';
+import { useOresStore } from '@/features/max-calculator/stores/oreStore';
 import { useMemo } from 'react';
 
 export const useEquipmentLevel = ({ name, type }: Pick<Equipment, 'name' | 'type'>) => {

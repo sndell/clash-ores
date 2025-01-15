@@ -54,7 +54,7 @@ const Links = () => (
       className='bg-center bg-cover rounded-xl border-2 backdrop-blur-xl bg-primary border-white/10 bg-background2'
     >
       <div className='justify-center py-4 w-full rounded-xl bg-black/10'>
-        <div className='drop-shadow-[0_2px_1px_rgb(0,0,0)] flex items-center  justify-center gap-2'>
+        <div className='drop-shadow-[0_2px_1px_rgb(0,0,0)] flex items-center text-center justify-center gap-2'>
           Calculate ores for a equipment <span className='icon-[solar--arrow-right-linear] text-xl' />
         </div>
       </div>

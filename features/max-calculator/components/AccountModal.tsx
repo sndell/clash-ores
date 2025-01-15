@@ -8,7 +8,7 @@ import { createPortal } from 'react-dom';
 import { motion } from 'motion/react';
 import { cn } from '@/util/cn';
 
-export const AccountModal = ({ close }: { close: () => void }) => {
+const AccountModal = ({ close }: { close: () => void }) => {
   const [tag, setTag] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -85,3 +85,5 @@ export const AccountModal = ({ close }: { close: () => void }) => {
     document.body
   );
 };
+
+export default AccountModal;

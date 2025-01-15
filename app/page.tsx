@@ -30,9 +30,9 @@ export default function Page() {
 
 const Hero = () => (
   <div className='flex flex-col gap-2 px-3 py-3 text-center'>
-    <h1>Clash of Clans Calculator: Equipment tools</h1>
+    <h1>Clash of Clans: Ore Calculator Tools</h1>
     <p className='text-sm text-primary-dark'>
-      Calculate ores to max all equipments, a single equipment or how many ores you can get per day
+      Calculate how many ores you need to max all equipments, a single equipment or how many ores you can get per week
     </p>
   </div>
 );

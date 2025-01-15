@@ -14,7 +14,7 @@ const NAV_LINKS = [
   { label: 'Ore gain calculator', href: '/gain' },
 ];
 
-export const NavMenu = ({
+const NavMenu = ({
   close,
   buttonRef,
   openAccountModal,
@@ -81,3 +81,5 @@ export const NavMenu = ({
     </motion.div>
   );
 };
+
+export default NavMenu;

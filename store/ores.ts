@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { equipmentCost } from '@/data';
+import { equipmentCost } from '@/data/equipment';
 
 const INITIAL_ORES: Ores = {
   shiny: 0,

@@ -1,4 +1,19 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Ore Calculator',
+  description: 'Calculate ore cost to max all equipments, a single equipment or how many ores you can gain per day.',
+  openGraph: {
+    title: 'Ore Calculator',
+    description: 'Calculate ore cost to max all equipments, a single equipment or how many ores you can gain per day.',
+    url: 'https://ores.sundell.dev',
+    siteName: 'Ore Calculator',
+  },
+  alternates: {
+    canonical: 'https://ores.sundell.dev',
+  },
+};
 
 export default function Page() {
   return (
@@ -28,7 +43,7 @@ const Links = () => (
       href='/all'
       className='bg-center bg-cover rounded-xl border-2 backdrop-blur-xl bg-primary border-black/30 bg-background1'
     >
-      <div className='py-4   rounded-[10px]  bg-black/50 w-full'>
+      <div className='py-4 rounded-[10px] bg-black/50 w-full'>
         <div className='drop-shadow-[0_2px_1px_rgb(0,0,0)] flex items-center justify-center gap-2'>
           Calculate ores to max all equipment <span className='icon-[solar--arrow-right-linear] text-xl' />
         </div>
@@ -41,6 +56,16 @@ const Links = () => (
       <div className='justify-center py-4 w-full rounded-xl bg-black/10'>
         <div className='drop-shadow-[0_2px_1px_rgb(0,0,0)] flex items-center  justify-center gap-2'>
           Calculate ores for a equipment <span className='icon-[solar--arrow-right-linear] text-xl' />
+        </div>
+      </div>
+    </Link>
+    <Link
+      href='/gain'
+      className='bg-center bg-cover rounded-xl border-2 backdrop-blur-xl bg-primary border-black/30 bg-background3'
+    >
+      <div className='py-4 rounded-[10px] bg-black/50 w-full'>
+        <div className='drop-shadow-[0_2px_1px_rgb(0,0,0)] flex items-center justify-center gap-2'>
+          Calculate weekly ore gain <span className='icon-[solar--arrow-right-linear] text-xl' />
         </div>
       </div>
     </Link>

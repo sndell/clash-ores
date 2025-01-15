@@ -10,11 +10,8 @@ export async function getEquipmentData(tag: string): Promise<HeroEquipment[]> {
     });
     if (!response.ok) throw new Error('Invalid tag');
     const data: Player = await response.json();
-    console.log(data);
-
     return data.heroEquipment;
-  } catch (error) {
-    console.log(error);
+  } catch {
     throw new Error('Invalid tag');
   }
 }

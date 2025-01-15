@@ -74,4 +74,23 @@ body {
     background-size: 64px 64px;
     background-color: #131111;
   }
+
+  .thumb-none input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0; /* Hide the thumb */
+    height: 0;
+  }
+
+  .thumb-none input[type='range']::-moz-range-thumb {
+    width: 0; /* Hide the thumb */
+    height: 0;
+    opacity: 0;
+  }
+
+  .thumb-none input[type='range']::-ms-thumb {
+    width: 0; /* Hide the thumb */
+    height: 0;
+    opacity: 0;
+  }
 }

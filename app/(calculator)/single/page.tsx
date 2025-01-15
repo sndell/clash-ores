@@ -1,4 +1,10 @@
 import { UpgradeCalculatorForm } from '@/features/upgrade-calculator';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Ore Calculator - Single',
+  description: 'Specify rarity and levels to calculate ores for a single equipment.',
+};
 
 export default function Page() {
   return (

@@ -7,6 +7,7 @@ export default {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './features/**/*.{js,ts,jsx,tsx,mdx}',
+    './constants/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -38,9 +39,9 @@ export default {
         xs: '380px',
       },
       backgroundImage: {
-        background1: "url('../public/images/backgrounds/background1.jpg')",
-        background2: "url('../public/images/backgrounds/background2.png')",
-        background3: "url('../public/images/backgrounds/background3.jpg')",
+        'image-first': "url('../public/images/backgrounds/background1.jpg')",
+        'image-second': "url('../public/images/backgrounds/background2.png')",
+        'image-third': "url('../public/images/backgrounds/background3.jpg')",
         all: "url('../public/images/misc/all.jpg')",
         single: "url('../public/images/misc/single.png')",
       },

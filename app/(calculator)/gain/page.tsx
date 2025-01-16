@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className='flex flex-col justify-evenly items-center px-3 pt-3 pb-20 bg-center bg-cover h-dvh bg-background3'>
+    <div className='flex flex-col justify-evenly items-center px-3 pt-3 pb-20 bg-center bg-cover h-dvh bg-image-third'>
       <div className='absolute inset-0 backdrop-blur-sm h-dvh bg-primary' />
       <div className='overflow-auto relative w-full rounded-xl border backdrop-blur-xl scrollbar-slim bg-primary border-primary sm:max-w-96'>
         <GainHeader />

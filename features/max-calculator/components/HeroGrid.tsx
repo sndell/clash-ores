@@ -4,14 +4,18 @@ import { useElementSize } from '@/hooks/useElementSize';
 import { usePageSize } from '@/hooks/usePageSize';
 import { cn } from '@/util/cn';
 import { useRef } from 'react';
+import { HeroCard } from './HeroCard';
+import {
+  archerQueenEquipment,
+  barbarianKingEquipment,
+  grandWardenEquipment,
+  minionPrinceEquipment,
+  royalChampionEquipment,
+} from '@/data/equipment';
 
-type Props = {
-  children: React.ReactNode;
-};
-
-export const HeroGrid = ({ children }: Props) => {
+export const HeroGrid = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const { height: windowHeight } = usePageSize();
+  const { height: pageHeight } = usePageSize();
   const { height: elementHeight } = useElementSize(ref);
 
   return (
@@ -20,10 +24,14 @@ export const HeroGrid = ({ children }: Props) => {
         ref={ref}
         className={cn(
           'grid grid-cols-5 gap-3 p-3 max-sm:px-4 max-xl:grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 place-content-center',
-          elementHeight > windowHeight && 'pb-19'
+          elementHeight > pageHeight && 'pb-20'
         )}
       >
-        {children}
+        <HeroCard equipment={barbarianKingEquipment} title='Barbarian King' />
+        <HeroCard equipment={archerQueenEquipment} title='Archer Queen' />
+        <HeroCard equipment={grandWardenEquipment} title='Grand Warden' />
+        <HeroCard equipment={royalChampionEquipment} title='Royal Champion' />
+        <HeroCard equipment={minionPrinceEquipment} title='Minion Prince' />
       </div>
     </div>
   );

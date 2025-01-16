@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --background: #131111;
   --primary: hsla(0, 0%, 0%, 0.4);
   --secondary: hsla(0, 0%, 100%, 0.9);
   --accent: hsla(29, 97%, 56%, 0.9);
@@ -17,7 +18,7 @@
 
 body {
   color: var(--text-primary);
-  background-color: rgb(8, 8, 8);
+  background-color: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -32,33 +33,33 @@ body {
 }
 
 @layer utilities {
+  /* Center clash font */
   .center-text {
     @apply transform translate-y-0.5;
   }
 
+  /* Scrollbar styling */
   .scrollbar-slim::-webkit-scrollbar {
     width: 4px;
   }
-
   .scrollbar-slim::-webkit-scrollbar-track {
     background: transparent;
   }
-
   .scrollbar-slim::-webkit-scrollbar-thumb {
     background-color: hsla(0, 0%, 100%, 0.274);
     border-radius: 99px;
     /* border: 1px solid transparent;  */
     background-clip: padding-box;
   }
-
   .scrollbar-slim::-webkit-scrollbar-button {
     display: none;
   }
 
-  .halftone {
+  /* Landing background pattern */
+  .background-pattern {
     background-image: radial-gradient(#1f1f1f 1.5px, transparent 1.5px);
     background-size: 64px 64px;
-    background-color: #131111;
+    background-color: var(--background);
   }
 
   .thumb-none input[type='range']::-webkit-slider-thumb {

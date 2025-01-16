@@ -32,33 +32,15 @@ const OreDisplay = ({ ores }: { ores: Ores }) => {
   return (
     <div className='flex items-center justify-center gap-6 px-4 pt-[2px] overflow-hidden border rounded-full bg-primary border-primary backdrop-blur-xl max-sm:flex-1'>
       <div className='flex gap-2 items-center max-xs:flex-col max-xs:gap-1'>
-        <Image
-          src='/images/ores/Shiny.webp'
-          alt='Shiny'
-          width={24}
-          height={24}
-          className='object-contain aspect-square'
-        />
+        <Image src='/images/ores/Shiny.webp' alt='Shiny' width={24} height={24} className='object-contain aspect-square' />
         {ores.shiny}
       </div>
       <div className='flex gap-2 items-center max-xs:flex-col max-xs:gap-1'>
-        <Image
-          src='/images/ores/Glowy.webp'
-          alt='Glowy'
-          width={24}
-          height={24}
-          className='object-contain aspect-square'
-        />
+        <Image src='/images/ores/Glowy.webp' alt='Glowy' width={24} height={24} className='object-contain aspect-square' />
         {ores.glowy}
       </div>
       <div className='flex gap-2 items-center max-xs:flex-col max-xs:gap-1'>
-        <Image
-          src='/images/ores/Starry.webp'
-          alt='Starry'
-          width={24}
-          height={24}
-          className='object-contain aspect-square'
-        />
+        <Image src='/images/ores/Starry.webp' alt='Starry' width={24} height={24} className='object-contain aspect-square' />
         {ores.starry}
       </div>
     </div>

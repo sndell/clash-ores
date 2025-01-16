@@ -59,9 +59,7 @@ const AccountModal = ({ close }: { close: () => void }) => {
       >
         <div className='pt-3 pb-6 space-y-1'>
           <div className='text-center'>Load equipment data</div>
-          <p className='text-sm text-center text-primary-dark'>
-            Enter your Clash of Clans account tag to load your equipment data.
-          </p>
+          <p className='text-sm text-center text-primary-dark'>Enter your Clash of Clans account tag to load your equipment data.</p>
         </div>
         <input
           type='text'

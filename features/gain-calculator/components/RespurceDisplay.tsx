@@ -19,13 +19,7 @@ export const ResourceDisplay = ({ value, type, mode }: Props) => {
 
   return (
     <div className='flex gap-2 justify-center items-center'>
-      <Image
-        src={`/images/ores/${imageName}.webp`}
-        alt={type}
-        width={24}
-        height={24}
-        className='object-contain aspect-square '
-      />
+      <Image src={`/images/ores/${imageName}.webp`} alt={type} width={24} height={24} className='object-contain aspect-square ' />
       <span className={cn(value === 0 && 'text-primary-dark text-base')}>{oreAmount}</span>
       {value > 0 && (
         <>

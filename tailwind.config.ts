@@ -22,10 +22,20 @@ export default {
 			textColor: {
 				primary: 'var(--text-primary)',
 				'primary-dark': 'var(--text-primary-dark)',
+				secondary: 'var(--text-secondary)',
+			},
+			borderColor: {
+				primary: 'var(--border-primary)',
 			},
 			dropShadow: {
 				xs: '0 2px 1px rgb(0, 0, 0)',
 			},
+		},
+		screens: {
+			sm: '640px',
+			md: '830px',
+			lg: '1080px',
+			xl: '1340px',
 		},
 	},
 	plugins: [addDynamicIconSelectors()],

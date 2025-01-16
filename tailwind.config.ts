@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import { addDynamicIconSelectors } from '@iconify/tailwind';
 
 export default {
 	content: [
@@ -9,11 +10,22 @@ export default {
 	],
 	theme: {
 		extend: {
-			colors: {
+			backgroundImage: {
+				first: 'url("/images/backgrounds/1.jpg")',
+				second: 'url("/images/backgrounds/2.png")',
+				third: 'url("/images/backgrounds/3.jpg")',
+			},
+			backgroundColor: {
 				background: 'var(--background)',
-				foreground: 'var(--foreground)',
+			},
+			textColor: {
+				primary: 'var(--text-primary)',
+				'primary-dark': 'var(--text-primary-dark)',
+			},
+			dropShadow: {
+				xs: '0 2px 1px rgb(0, 0, 0)',
 			},
 		},
 	},
-	plugins: [],
+	plugins: [addDynamicIconSelectors()],
 } satisfies Config;

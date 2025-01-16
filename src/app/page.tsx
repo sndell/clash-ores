@@ -1,9 +1,5 @@
-'use client';
-
-import Image from 'next/image';
+import { Landing } from '@/components/Landing';
 
 export default function Home() {
-	const test = () => console.log('this is a test');
-
-	return <div>Landing</div>;
+	return <Landing />;
 }

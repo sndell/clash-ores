@@ -1,33 +1,38 @@
 {
-	"name": "clash-ores",
-	"version": "0.1.0",
-	"private": true,
-	"scripts": {
-		"dev": "next dev --turbopack",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint",
-		"format": "prettier --check --ignore-path .gitignore .",
-		"format:fix": "prettier --write --ignore-path .gitignore ."
-	},
-	"dependencies": {
-		"next": "15.1.4",
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0"
-	},
-	"devDependencies": {
-		"@eslint/eslintrc": "^3",
-		"@types/node": "^20",
-		"@types/react": "^19",
-		"@types/react-dom": "^19",
-		"autoprefixer": "^10.4.20",
-		"eslint": "^9",
-		"eslint-config-next": "15.1.4",
-		"eslint-config-prettier": "^10.0.1",
-		"postcss": "^8.5.1",
-		"prettier": "^3.4.2",
-		"prettier-plugin-tailwindcss": "^0.6.10",
-		"tailwindcss": "^3.4.17",
-		"typescript": "^5"
-	}
+  "name": "clash-ores",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --check --ignore-path .gitignore .",
+    "format:fix": "prettier --write --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "@iconify-json/solar": "^1.2.2",
+    "@iconify-json/svg-spinners": "^1.2.2",
+    "clsx": "^2.1.1",
+    "next": "15.1.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^2.6.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@iconify/tailwind": "^1.2.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.4",
+    "eslint-config-prettier": "^10.0.1",
+    "postcss": "^8.5.1",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.10",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5"
+  }
 }

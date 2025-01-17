@@ -30,6 +30,10 @@ export default {
 			dropShadow: {
 				xs: '0 2px 1px rgb(0, 0, 0)',
 			},
+			padding: {
+				18: '4.5rem',
+				19: '4.75rem',
+			},
 		},
 		screens: {
 			sm: '640px',

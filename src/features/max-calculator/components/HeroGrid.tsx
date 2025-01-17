@@ -23,7 +23,7 @@ export const HeroGrid = () => {
   const isScrollable = elementHeight && elementHeight >= pageHeight;
 
   return (
-    <div ref={ref} className={cn('overflow-y-auto relative gap-3 justify-center py-3 px-5 w-full', gridClasses, isScrollable && 'pb-19')}>
+    <div ref={ref} className={cn('overflow-y-auto relative gap-3 justify-center py-3 px-5 w-full', gridClasses, isScrollable && 'pb-18')}>
       <HeroCard name='Barbarian King' equipment={barbarianKingEquipment} />
       <HeroCard name='Archer Queen' equipment={archerQueenEquipment} />
       <HeroCard name='Grand Warden' equipment={grandWardenEquipment} />

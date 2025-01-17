@@ -11,15 +11,15 @@ export const OreResult = () => {
 
   return (
     <div className='flex gap-6 justify-center items-center px-6 rounded-full border backdrop-blur-xl bg-black/40 border-primary max-sm:flex-1'>
-      <div className='flex gap-1.5 items-center'>
+      <div className='flex xs:gap-1.5 items-center max-xs:flex-col'>
         <Image src='/images/ores/Shiny.webp' alt='shiny' width={24} height={24} className='object-contain aspect-square' />
         <span>{remainingOres.shiny}</span>
       </div>
-      <div className='flex gap-1.5 items-center'>
+      <div className='flex xs:gap-1.5 items-center max-xs:flex-col'>
         <Image src='/images/ores/Glowy.webp' alt='shiny' width={24} height={24} className='object-contain aspect-square' />
         <span>{remainingOres.glowy}</span>
       </div>
-      <div className='flex gap-1.5 items-center'>
+      <div className='flex xs:gap-1.5 items-center max-xs:flex-col'>
         <Image src='/images/ores/Starry.webp' alt='shiny' width={24} height={24} className='object-contain aspect-square' />
         <span>{remainingOres.starry}</span>
       </div>

@@ -1,3 +1,9 @@
-export const BackgroundOverlay = () => {
-  return <div className='absolute inset-0 bg-black/50 backdrop-blur-sm' />;
+import { cn } from '@/util/cn';
+
+interface BackgroundOverlayProps {
+  className?: string;
+}
+
+export const BackgroundOverlay = ({ className }: BackgroundOverlayProps) => {
+  return <div className={cn('absolute inset-0 backdrop-blur-sm bg-black/50', className)} />;
 };

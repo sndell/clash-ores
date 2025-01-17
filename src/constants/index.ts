@@ -19,5 +19,24 @@ export const LANDING_NAV_LINKS = [
 export const INITIAL_ORES: Ores = {
   shiny: 0,
   glowy: 0,
-  starry: 0
-} 
+  starry: 0,
+};
+
+export const NAV_MENU_LINKS = [
+  {
+    label: 'Homepage',
+    path: '/',
+  },
+  {
+    label: 'All equipment',
+    path: '/all',
+  },
+  {
+    label: 'Single equipment',
+    path: '/single',
+  },
+  {
+    label: 'Weekly gain calculator',
+    path: '/gain',
+  }
+];

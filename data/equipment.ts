@@ -81,6 +81,11 @@ export const barbarianKingEquipment: Equipment[] = [
     type: 'epic',
     imageUrl: '/images/equipment/Spiky_Ball.webp',
   },
+  {
+    name: 'Snake Bracelet',
+    type: 'epic',
+    imageUrl: '/images/equipment/Snake_Bracelet.webp',
+  },
 ];
 
 export const archerQueenEquipment: Equipment[] = [
@@ -126,6 +131,11 @@ export const minionPrinceEquipment: Equipment[] = [
     name: 'Dark Orb',
     type: 'common',
     imageUrl: '/images/equipment/Dark_Orb.webp',
+  },
+  {
+    name: 'Metal Pants',
+    type: 'common',
+    imageUrl: '/images/equipment/Metal_Pants.webp',
   },
 ];
 

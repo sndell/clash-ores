@@ -18,6 +18,7 @@ export default {
 			},
 			backgroundColor: {
 				background: 'var(--background)',
+				accent: 'var(--accent)',
 			},
 			textColor: {
 				primary: 'var(--text-primary)',
@@ -26,6 +27,8 @@ export default {
 			},
 			borderColor: {
 				primary: 'var(--border-primary)',
+				secondary: 'var(--border-secondary)',
+				accent: 'var(--border-accent)',
 			},
 			dropShadow: {
 				xs: '0 2px 1px rgb(0, 0, 0)',

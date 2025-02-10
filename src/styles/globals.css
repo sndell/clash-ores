@@ -3,11 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --background: #151212;
-  --text-primary: #ededed;
-  --text-primary-dark: #929292;
-  --text-secondary: #0b0b0b;
-  --border-primary: rgba(91, 91, 91, 0.38);
+  --background: hsl(0, 8%, 8%);
+  --accent: hsla(29, 97%, 56%, 0.9);
+  --text-primary: hsl(0, 0%, 93%);
+  --text-primary-dark: hsl(0, 0%, 57%);
+  --text-secondary: hsl(0, 0%, 4%);
+  --border-primary: hsla(0, 0%, 36%, 0.38);
+  --border-secondary: hsla(0, 0%, 36%, 0.78);
+  --border-accent: hsla(29, 97%, 56%, 0.9);
 }
 
 @layer base {

@@ -4,13 +4,15 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
+import { AccountButton } from '@/features/max-calculator';
 
 interface NavMenuProps {
-  close: () => void;
+  closeNavMenu: () => void;
+  openAccountModal: () => void;
   navButtonRef: React.RefObject<HTMLButtonElement | null>;
 }
 
-export const NavMenu = ({ close, navButtonRef }: NavMenuProps) => {
+export const NavMenu = ({ closeNavMenu, openAccountModal, navButtonRef }: NavMenuProps) => {
   const menuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
@@ -21,7 +23,7 @@ export const NavMenu = ({ close, navButtonRef }: NavMenuProps) => {
         const isMenuClicked = menuRef.current.contains(event.target as Node);
 
         if (isButtonClicked) navigator.vibrate(20);
-        if (!isButtonClicked && !isMenuClicked) close();
+        if (!isButtonClicked && !isMenuClicked) closeNavMenu();
       }
     };
 
@@ -33,15 +35,20 @@ export const NavMenu = ({ close, navButtonRef }: NavMenuProps) => {
 
   return (
     <motion.div
-      initial={{ height: 0, width: 0 }}
-      animate={{ height: 'auto', width: 'max-content' }}
-      exit={{ height: 0, width: 0 }}
+      initial={{ height: 0, width: 0, opacity: 0 }}
+      animate={{ height: 'auto', width: 'max-content', opacity: 1 }}
+      exit={{ height: 0, width: 0, opacity: 1 }}
       transition={{ duration: 0.1, ease: 'anticipate' }}
       ref={menuRef}
       className='flex overflow-hidden absolute bottom-full z-10 flex-col mb-2 whitespace-nowrap rounded-xl border divide-y backdrop-blur-xl text-start max-sm:right-0 bg-black/50 border-primary divide-primary'
     >
+      <AccountButton openAccountModal={openAccountModal} />
       {NAV_MENU_LINKS.map(({ label, path }) => (
-        <Link key={path} href={path} className={cn('py-3 px-4 hover:text-primary text-primary-dark', pathname === path && 'text-primary')}>
+        <Link
+          key={path}
+          href={path}
+          className={cn('py-3 px-4 center-text hover:text-primary text-primary-dark', pathname === path && 'text-primary')}
+        >
           {label}
         </Link>
       ))}

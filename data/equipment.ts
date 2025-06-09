@@ -147,6 +147,11 @@ export const minionPrinceEquipment: Equipment[] = [
     type: "common",
     imageUrl: "/images/equipment/Noble_Iron.webp",
   },
+  {
+    name: "Dark Crown",
+    type: "epic",
+    imageUrl: "/images/equipment/Dark_Crown.webp",
+  },
 ];
 
 export const grandWardenEquipment: Equipment[] = [

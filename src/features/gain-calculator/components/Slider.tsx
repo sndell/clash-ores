@@ -14,7 +14,9 @@ interface SliderProps {
 
 export const Slider = ({ value, onChange, min, max, step = 1, markers, displayValue }: SliderProps) => {
   const handleChange = (value: number) => {
-    navigator.vibrate(30);
+    if (typeof navigator !== "undefined" && "vibrate" in navigator) {
+      navigator.vibrate(30);
+    }
     onChange(value);
   };
 
@@ -22,16 +24,17 @@ export const Slider = ({ value, onChange, min, max, step = 1, markers, displayVa
 
   return (
     <div>
-      <div className="relative select-none touch-none">
-        <div className="absolute top-0 bottom-0 my-auto w-full h-2 rounded-r-full  bg-primary" />
+      <div className="relative w-full select-none touch-none h-6">
+        {/* Track Background */}
+        <div className="absolute top-1/2 left-0 w-full h-2 rounded-full bg-primary -translate-y-1/2" />
+
+        {/* Filled Track */}
         <div
-          className="absolute top-0 bottom-0 my-auto h-2 rounded-l-full  bg-accent"
+          className="absolute top-1/2 left-0 h-2 bg-accent rounded-full -translate-y-1/2"
           style={{ width: `${percentage}%` }}
         />
-        <div
-          className="absolute top-0 bottom-0 my-auto w-5 h-5 bg-white rounded-full"
-          style={{ left: `${percentage * 0.95}%` }}
-        />
+
+        {/* Native Range Input */}
         <input
           type="range"
           min={min}
@@ -39,12 +42,17 @@ export const Slider = ({ value, onChange, min, max, step = 1, markers, displayVa
           step={step}
           value={value}
           onChange={(e) => handleChange(Number(e.target.value))}
-          className="mt-1 w-full h-4 bg-transparent rounded-lg appearance-none cursor-pointer accent-black/10 thumb-none"
+          className={cn(
+            "w-full h-6 bg-transparent appearance-none pointer-events-auto z-10 relative",
+            "range-thumb" // custom class we will define below
+          )}
         />
       </div>
+
+      {/* Markers or Display Value */}
       <div>
         {markers ? (
-          <div className="flex justify-between items-center px-1 w-full">
+          <div className="flex justify-between items-center px-1 w-full mt-1">
             {markers.map((marker) => (
               <span
                 key={marker}
@@ -58,7 +66,7 @@ export const Slider = ({ value, onChange, min, max, step = 1, markers, displayVa
             ))}
           </div>
         ) : (
-          <div className="text-xl font-bold text-center">{displayValue ? displayValue(value) : value}</div>
+          <div className="text-xl font-bold text-center mt-1">{displayValue ? displayValue(value) : value}</div>
         )}
       </div>
     </div>

@@ -23,13 +23,13 @@ export const Slider = ({ value, onChange, min, max, step = 1, markers, displayVa
   return (
     <div>
       <div className="relative select-none touch-none">
-        <div className="absolute top-0 bottom-0 my-auto w-full h-2 rounded-r-full pointer-events-none bg-primary" />
+        <div className="absolute top-0 bottom-0 my-auto w-full h-2 rounded-r-full  bg-primary" />
         <div
-          className="absolute top-0 bottom-0 my-auto h-2 rounded-l-full pointer-events-none bg-accent"
+          className="absolute top-0 bottom-0 my-auto h-2 rounded-l-full  bg-accent"
           style={{ width: `${percentage}%` }}
         />
         <div
-          className="absolute top-0 bottom-0 my-auto w-5 h-5 bg-white rounded-full pointer-events-none"
+          className="absolute top-0 bottom-0 my-auto w-5 h-5 bg-white rounded-full"
           style={{ left: `${percentage * 0.95}%` }}
         />
         <input

@@ -20,10 +20,18 @@
     background-color: var(--background);
   }
 
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
+  input[type="range"].range-thumb::-webkit-slider-thumb {
     -webkit-appearance: none;
-    margin: 0;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 20;
   }
 }
 

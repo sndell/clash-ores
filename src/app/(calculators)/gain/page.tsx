@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="flex flex-col justify-evenly items-center px-3 pt-3 pb-20 bg-center bg-cover h-dvh bg-third">
+    <div className="flex flex-col pb-18 py-3 px-5 justify-evenly items-center  bg-center bg-cover h-dvh bg-third">
       <BackgroundOverlay />
       <div className="overflow-auto relative w-full rounded-xl border backdrop-blur-xl scrollbar-slim bg-primary border-primary sm:max-w-96">
         <GainHeader />

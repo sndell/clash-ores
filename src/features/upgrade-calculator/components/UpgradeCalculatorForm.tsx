@@ -46,7 +46,7 @@ export const UpgradeCalculatorForm = () => {
     if (storedRarity) updateRarity(storedRarity);
     if (storedMinLevel) setMinLevel(Number(storedMinLevel));
     if (storedMaxLevel) setMaxLevel(Number(storedMaxLevel));
-  }, []);
+  }, [updateRarity]);
 
   return (
     <div className="flex overflow-hidden relative flex-col justify-center space-y-3 w-full h-full sm:max-w-96">

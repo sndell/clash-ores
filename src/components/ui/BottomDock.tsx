@@ -1,4 +1,3 @@
-import { BackgroundOverlay } from "../elements/BackgroundOverlay";
 import { NavButton } from "./NavButton";
 import { OreResult } from "./OreResult";
 

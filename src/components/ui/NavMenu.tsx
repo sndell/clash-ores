@@ -31,7 +31,7 @@ export const NavMenu = ({ closeNavMenu, openAccountModal, navButtonRef }: NavMen
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [navButtonRef, closeNavMenu]);
 
   return (
     <motion.div

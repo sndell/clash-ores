@@ -5,6 +5,7 @@
 :root {
   --background: hsl(0, 8%, 8%);
   --accent: hsla(29, 97%, 56%, 0.9);
+  --primary: hsla(0, 0%, 0%, 0.4);
   --text-primary: hsl(0, 0%, 93%);
   --text-primary-dark: hsl(0, 0%, 57%);
   --text-secondary: hsl(0, 0%, 4%);
@@ -19,8 +20,8 @@
     background-color: var(--background);
   }
 
-  input[type='number']::-webkit-inner-spin-button,
-  input[type='number']::-webkit-outer-spin-button {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }

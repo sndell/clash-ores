@@ -106,6 +106,10 @@ export const useGainStore = create<GainStore>()(
       // Recalculate everything when store is rehydrated
       onRehydrateStorage: () => (state) => {
         if (state) {
+          // Reset calculated values to initial state first
+          state.monthlyTraderOresMedal = { ...INITIAL_ORES };
+          state.monthlyTraderOresGem = { ...INITIAL_ORES };
+
           // Recalculate daily ores from trophies
           const tier = LEAGUE_TIERS.find((tier) => state.trophies < tier.maxTrophies);
           if (tier) {
@@ -115,13 +119,14 @@ export const useGainStore = create<GainStore>()(
           // Recalculate war ores
           state.calculateWarOres();
 
-          // Recalculate trader ores from values
+          // Recalculate trader ores from values (medals)
           (Object.keys(state.traderMedalValues) as OreType[]).forEach((type) => {
             const value = state.traderMedalValues[type];
             const oreAmount = ORE_CONFIG_MEDALS[type].values[value] * 4.33;
             state.monthlyTraderOresMedal[type] = oreAmount;
           });
 
+          // Recalculate trader ores from values (gems)
           (Object.keys(state.traderGemValues) as OreType[]).forEach((type) => {
             const value = state.traderGemValues[type];
             const oreAmount = ORE_CONFIG_GEMS[type].values[value] * 4.33;

@@ -4,6 +4,8 @@ type Equipment = {
   imageUrl: string;
 };
 
+type ItemUpdate = Pick<Equipment, "name" | "rarity"> & { level: number };
+
 interface EquipmentStore {
   levels: {
     [key: string]: number;
@@ -17,6 +19,7 @@ interface EquipmentStore {
   updateEquipmentOres: (name: string, level: number, rarity: string) => void;
   calculateAllOres: () => void;
   reset: () => void;
+  loadItems: (items: HeroEquipment[]) => void;
 }
 
 // Clash Api Types

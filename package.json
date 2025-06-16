@@ -9,6 +9,7 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@next/third-parties": "^15.3.3",
 		"clsx": "^2.1.1",
 		"motion": "^11.18.1",
 		"next": "15.1.4",

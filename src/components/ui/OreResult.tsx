@@ -2,6 +2,7 @@
 
 import { useGainStore } from "@/features/gain-calculator";
 import { useEquipmentStore } from "@/features/max-calculator/stores/equipmentStore";
+import { useUpgradeStore } from "@/features/upgrade-calculator";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
@@ -10,8 +11,9 @@ export const OreResult = () => {
 
   const { remainingOres: equipmentOres } = useEquipmentStore();
   const { ores: gainOres } = useGainStore();
+  const { ores: upgradeOres } = useUpgradeStore();
 
-  const selectedOres = pathname === "/single" ? equipmentOres : pathname === "/all" ? gainOres : gainOres;
+  const selectedOres = pathname === "/single" ? upgradeOres : pathname === "/all" ? equipmentOres : gainOres;
 
   return (
     <div className="flex gap-6 justify-center items-center px-6 rounded-full border backdrop-blur-xl bg-primary border-primary max-sm:flex-1">

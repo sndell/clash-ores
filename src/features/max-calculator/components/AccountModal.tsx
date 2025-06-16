@@ -4,6 +4,8 @@ import { Modal } from "@/components/elements/Modal";
 import { useState } from "react";
 import { getEquipmentData } from "../actions/getAccountData";
 import { cn } from "@/util/cn";
+import { useEquipmentStore } from "../stores/equipmentStore";
+import { sendGAEvent } from "@next/third-parties/google";
 
 interface AccountModalProps {
   close: () => void;
@@ -14,7 +16,7 @@ export const AccountModal = ({ close }: AccountModalProps) => {
     <Modal close={close}>
       <div className="divide-y divide-primary">
         <AccountModalHero />
-        <AccountModalForm />
+        <AccountModalForm close={close} />
       </div>
     </Modal>
   );
@@ -31,58 +33,42 @@ const AccountModalHero = () => {
   );
 };
 
-const AccountModalForm = () => {
+const AccountModalForm = ({ close }: { close: () => void }) => {
   const [formState, setFormState] = useState({
     tag: "",
     error: "",
     isLoading: false,
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const { loadItems } = useEquipmentStore();
+
+  const handleLoad = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setFormState((prev) => ({ ...prev, isLoading: true, error: "" }));
-
-    const regex = /^[#PYLQGRJCUV0289]+$/; // Only allows the following characters: #, P, Y, L, Q, G, R, J, C, U, V, 0, 2, 8, 9
-    if (!regex.test(formState.tag)) {
-      setFormState((prev) => ({ ...prev, error: "Invalid tag", isLoading: false }));
+    setFormState((prev) => ({ ...prev, error: "" }));
+    const regex = /^[#PYLQGRJCUV0289]+$/;
+    if (regex.test(formState.tag)) {
+      setFormState((prev) => ({ ...prev, isLoading: true }));
+      try {
+        const data = await getEquipmentData(formState.tag);
+        loadItems(data);
+        sendGAEvent("event", "account_loading_complete", { value: formState.tag });
+        close();
+      } catch {
+        setFormState((prev) => ({ ...prev, error: "Invalid tag" }));
+      } finally {
+        setFormState((prev) => ({ ...prev, isLoading: false }));
+      }
+    } else {
+      setFormState((prev) => ({ ...prev, error: "Invalid tag" }));
     }
-
-    try {
-      const data = await getEquipmentData(formState.tag);
-    } catch {
-      setFormState((prev) => ({ ...prev, error: "Invalid tag", isLoading: false }));
-    }
-    //   setError('');
-
-    //   const regex = /^[#PYLQGRJCUV0289]+$/;
-    //   if
-
-    //   if (regex.test(tag)) {
-    //     setIsLoading(true);
-    //     try {
-    //       const data = await getEquipmentData(tag);
-    //       console.log(data);
-
-    //       // loadItems(data);
-    //       close();
-    //     } catch {
-    //       setError('Invalid tag');
-    //     } finally {
-    //       setIsLoading(false);
-    //     }
-    //     setIsLoading;
-    //   } else {
-    //     setError('Invalid tag');
-    //   }
   };
-
   const handleTagChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormState((prev) => ({ ...prev, tag: e.target.value, error: "" }));
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="flex gap-2 p-3 max-xs:flex-col">
+      <form onSubmit={handleLoad} className="flex gap-2 p-3 max-xs:flex-col">
         <input
           type="text"
           placeholder="Clash of Clans tag..."

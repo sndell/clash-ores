@@ -10,7 +10,7 @@ export const LANDING_NAV_LINKS = [
     image: "bg-second",
   },
   {
-    label: "Weekly ore gain",
+    label: "Monthly ore gain",
     path: "/gain",
     image: "bg-third",
   },
@@ -30,7 +30,7 @@ export const NAV_MENU_LINKS = [
     path: "/single",
   },
   {
-    label: "Weekly gain calculator",
+    label: "Monthly gain calculator",
     path: "/gain",
   },
 ];

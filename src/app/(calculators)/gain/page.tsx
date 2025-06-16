@@ -4,11 +4,11 @@ import { GainCalculatorForm } from "@/features/gain-calculator";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Ore Calculator - Gain per week",
-  description: "Enter your details and calculate how many ores you can gain per week.",
+  title: "Ore Calculator - Gain per month",
+  description: "Enter your details and calculate how many ores you can gain per month.",
   openGraph: {
-    title: "Ore Calculator - Gain per week",
-    description: "Enter your details and calculate how many ores you can gain per week.",
+    title: "Ore Calculator - Gain per month",
+    description: "Enter your details and calculate how many ores you can gain per month.",
     url: "https://ores.sundell.dev/gain",
     siteName: "Ore Calculator",
   },
@@ -32,6 +32,6 @@ export default function Page() {
 const GainHeader = () => (
   <header className="px-3 pt-6 pb-6 space-y-1 text-center">
     <h1>Ore gain calculator</h1>
-    <p className="text-sm text-primary-dark">Enter the details below to calculate how many ores you gain per week</p>
+    <p className="text-sm text-primary-dark">Enter the details below to calculate how many ores you gain per month</p>
   </header>
 );

@@ -50,6 +50,12 @@ export const useEquipmentStore = create<EquipmentStore>()(
       reset: () => {
         set({ levels: {}, equipmentOres: {}, remainingOres: getTotalOres(), totalOres: getTotalOres() });
       },
+      loadItems: (items) => {
+        items.forEach((item) => {
+          const rarity = item.maxLevel === 27 ? "epic" : "common";
+          get().updateLevel(item.name, item.level, item.maxLevel, rarity);
+        });
+      },
     }),
     { name: "equipment-store" }
   )

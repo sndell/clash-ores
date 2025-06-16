@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { INITIAL_ORES } from '@/constants';
-import { equipmentCost } from '@/data';
-import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
-import { getTotalOres } from '../util/getTotalOres';
+import { INITIAL_ORES } from "@/constants";
+import { equipmentCost } from "@/data";
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+import { getTotalOres } from "../util/getTotalOres";
 
 export const useEquipmentStore = create<EquipmentStore>()(
   persist(
@@ -47,7 +47,10 @@ export const useEquipmentStore = create<EquipmentStore>()(
         };
         set({ remainingOres });
       },
+      reset: () => {
+        set({ levels: {}, equipmentOres: {}, remainingOres: getTotalOres(), totalOres: getTotalOres() });
+      },
     }),
-    { name: 'equipment-store' }
+    { name: "equipment-store" }
   )
 );

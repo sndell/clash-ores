@@ -1,6 +1,6 @@
 type Equipment = {
   name: string;
-  rarity: 'common' | 'epic';
+  rarity: "common" | "epic";
   imageUrl: string;
 };
 
@@ -9,13 +9,14 @@ interface EquipmentStore {
     [key: string]: number;
   };
   equipmentOres: {
-    [key: string]: Ores
-  }
+    [key: string]: Ores;
+  };
   remainingOres: Ores;
   totalOres: Ores;
   updateLevel: (name: string, level: number, maxLevel: number, rarity: string) => void;
   updateEquipmentOres: (name: string, level: number, rarity: string) => void;
   calculateAllOres: () => void;
+  reset: () => void;
 }
 
 // Clash Api Types
@@ -79,11 +80,11 @@ type Achievement = {
   target: number;
   info: string;
   completionInfo: string | null;
-  village: 'home' | 'builderBase' | 'clanCapital';
+  village: "home" | "builderBase" | "clanCapital";
 };
 
 type PlayerHouseElement = {
-  type: 'ground' | 'walls' | 'roof' | 'decoration';
+  type: "ground" | "walls" | "roof" | "decoration";
   id: number;
 };
 
@@ -95,7 +96,7 @@ type Troop = {
   name: string;
   level: number;
   maxLevel: number;
-  village: 'home' | 'builderBase';
+  village: "home" | "builderBase";
   superTroopIsActive?: boolean;
 };
 
@@ -103,14 +104,14 @@ type HeroEquipment = {
   name: string;
   level: number;
   maxLevel: number;
-  village: 'home';
+  village: "home";
 };
 
 type Hero = {
   name: string;
   level: number;
   maxLevel: number;
-  village: 'home' | 'builderBase';
+  village: "home" | "builderBase";
   equipment?: HeroEquipment[];
 };
 
@@ -118,7 +119,7 @@ type Spell = {
   name: string;
   level: number;
   maxLevel: number;
-  village: 'home';
+  village: "home";
 };
 
 type Player = {

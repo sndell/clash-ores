@@ -1,7 +1,6 @@
 "use client";
 
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
 
 export const useDaysToFinishStore = create<DaysToFinishStore>()((set, get) => ({
   showDaysToFinish: false,

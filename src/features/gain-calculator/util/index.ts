@@ -24,3 +24,6 @@ export const calculateTotalMonthlyOres = (state: Omit<GainStore, keyof Function>
 export const createRange = (start: number, length: number) => Array.from({ length }, (_, i) => i + start);
 
 export const capitalizeFirst = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
+
+export const getDaysToMax = (remainingAmount: number, monthlyAmount: number) =>
+  Math.floor(remainingAmount / (monthlyAmount / 30));

@@ -20,6 +20,7 @@ export default {
         background: "var(--background)",
         primary: "var(--primary)",
         accent: "var(--accent)",
+        divider: "var(--border-primary)",
       },
       textColor: {
         primary: "var(--text-primary)",

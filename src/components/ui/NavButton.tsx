@@ -33,7 +33,7 @@ export const NavButton = () => {
       <button
         ref={navButtonRef}
         onClick={isNavMenuOpen ? closeNavMenu : openNavMenu}
-        className="grid relative place-items-center p-4 rounded-full"
+        className="grid relative place-items-center p-4 rounded-full max-xs:h-20  h-16 aspect-square"
       >
         <AnimatePresence>
           {isNavMenuOpen && (
@@ -48,6 +48,7 @@ export const NavButton = () => {
         <BackgroundOverlay className="rounded-full border border-primary" />
         <span className="icon-[solar--hamburger-menu-outline] text-2xl" />
       </button>
+
       <AnimatePresence>
         {isAccountModalOpen && <AccountModal key="account-modal" close={closeAccountModal} />}
       </AnimatePresence>

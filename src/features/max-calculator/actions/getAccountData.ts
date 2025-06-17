@@ -2,7 +2,8 @@
 
 export async function getEquipmentData(tag: string): Promise<HeroEquipment[]> {
   try {
-    const formattedTag = tag.replace(/^#/, "%23");
+    const formattedTag = tag.toUpperCase().replace(/^#/, "%23");
+
     const response = await fetch(`https://cocproxy.royaleapi.dev/v1/players/${formattedTag}`, {
       headers: {
         Authorization: `Bearer ${process.env.CLASH_API_TOKEN}`,
@@ -10,7 +11,6 @@ export async function getEquipmentData(tag: string): Promise<HeroEquipment[]> {
     });
     if (!response.ok) throw new Error("Invalid tag");
     const data: Player = await response.json();
-    console.log(data.heroEquipment);
 
     return data.heroEquipment;
   } catch {

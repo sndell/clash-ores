@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { AccountButton, ResetButton } from "@/features/max-calculator";
+import { useDaysToFinishStore } from "@/features/gain-calculator";
 
 interface NavMenuProps {
   closeNavMenu: () => void;
@@ -15,6 +16,8 @@ interface NavMenuProps {
 export const NavMenu = ({ closeNavMenu, openAccountModal, navButtonRef }: NavMenuProps) => {
   const menuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
+  const canShowDaysToFinish = pathname === "/all" || pathname === "/single";
+  const { showDaysToFinish, toggleShowDaysToFinish } = useDaysToFinishStore();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -47,6 +50,21 @@ export const NavMenu = ({ closeNavMenu, openAccountModal, navButtonRef }: NavMen
           <AccountButton openAccountModal={openAccountModal} />
           <ResetButton />
         </>
+      )}
+      {canShowDaysToFinish && (
+        <div className="flex gap-2 items-center px-4 py-3 whitespace-nowrap center-text">
+          <div onClick={() => toggleShowDaysToFinish()}>
+            {showDaysToFinish ? (
+              <div className="flex gap-2 items-center">
+                <span className="icon-[solar--eye-closed-bold] text-xl" /> Hide days to finish
+              </div>
+            ) : (
+              <div className="flex gap-2 items-center">
+                <span className="icon-[solar--eye-bold] text-xl" /> Show days to finish
+              </div>
+            )}
+          </div>
+        </div>
       )}
       {NAV_MENU_LINKS.map(({ label, path }) => (
         <Link

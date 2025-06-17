@@ -46,7 +46,8 @@ const AccountModalForm = ({ close }: { close: () => void }) => {
     e.preventDefault();
     setFormState((prev) => ({ ...prev, error: "" }));
     const regex = /^[#PYLQGRJCUV0289]+$/;
-    if (regex.test(formState.tag)) {
+    const upperTag = formState.tag.toUpperCase();
+    if (regex.test(upperTag)) {
       setFormState((prev) => ({ ...prev, isLoading: true }));
       try {
         const data = await getEquipmentData(formState.tag);

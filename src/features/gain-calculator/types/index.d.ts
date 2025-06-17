@@ -36,3 +36,8 @@ interface GainStore {
   calculateWarOres: () => void;
   setTraderOres: (mode: "medal" | "gem", type: OreType, value: number) => void;
 }
+
+interface DaysToFinishStore {
+  showDaysToFinish: boolean;
+  toggleShowDaysToFinish: (value?: boolean) => void;
+}

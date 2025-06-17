@@ -1,13 +1,12 @@
 "use client";
 
-import { DaysToMax, useGainStore } from "@/features/gain-calculator";
+import { useGainStore } from "@/features/gain-calculator";
 import { useDaysToFinishStore } from "@/features/gain-calculator/stores/daysToFinishStore";
 import { getDaysToMax } from "@/features/gain-calculator/util";
 import { useEquipmentStore } from "@/features/max-calculator";
 import { useUpgradeStore } from "@/features/upgrade-calculator";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 
 export const OreResult = () => {
   const pathname = usePathname();

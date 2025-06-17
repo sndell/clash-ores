@@ -34,7 +34,7 @@ export const HeroGrid = () => {
       className={cn(
         "overflow-y-auto relative gap-3 justify-center py-3 px-5 w-full",
         gridClasses,
-        isScrollable && "pb-18"
+        isScrollable && "pb-20"
       )}
     >
       <HeroCard name="Barbarian King" equipment={barbarianKingEquipment} />

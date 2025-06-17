@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="grid place-items-center px-5 py-3 bg-center bg-cover pb-18 h-dvh bg-second">
+    <div className="grid place-items-center px-5 py-3 bg-center bg-cover pb-20 h-dvh bg-second">
       <div className="absolute inset-0 backdrop-blur-sm h-dvh bg-primary" />
       <UpgradeCalculatorForm />
     </div>

@@ -11,7 +11,7 @@
   --text-secondary: hsl(0, 0%, 4%);
   --border-primary: hsla(0, 0%, 36%, 0.38);
   --border-secondary: hsla(0, 0%, 36%, 0.78);
-  --border-accent: hsla(29, 97%, 56%, 0.9);
+  --border-accent: #fc8b22e6;
 }
 
 @layer base {

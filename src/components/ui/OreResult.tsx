@@ -25,10 +25,10 @@ export const OreResult = () => {
   return (
     <button
       onClick={handleClick}
-      className="space-y-2 py-2 rounded-full border backdrop-blur-xl bg-primary border-primary max-sm:flex-1"
+      className="space-y-2 py-2 rounded-full border backdrop-blur-xl bg-primary border-primary max-sm:flex-1 sm:w-80"
     >
-      <div className="flex gap-6 justify-center items-center px-6 ">
-        <div className="flex xs:gap-1.5 items-center max-xs:flex-col">
+      <div className="flex justify-around items-center px-6 gap-6">
+        <div className="flex xs:gap-1.5 items-center justify-center max-xs:flex-col">
           <Image
             src="/images/ores/Shiny.webp"
             alt="shiny"
@@ -43,7 +43,7 @@ export const OreResult = () => {
             )}
           </div>
         </div>
-        <div className="flex xs:gap-1.5 items-center max-xs:flex-col">
+        <div className="flex xs:gap-1.5 items-center justify-center max-xs:flex-col">
           <Image
             src="/images/ores/Glowy.webp"
             alt="shiny"
@@ -58,7 +58,7 @@ export const OreResult = () => {
             )}
           </div>
         </div>
-        <div className="flex xs:gap-1.5 items-center max-xs:flex-col">
+        <div className="flex xs:gap-1.5 items-center justify-center max-xs:flex-col">
           <Image
             src="/images/ores/Starry.webp"
             alt="shiny"

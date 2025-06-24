@@ -5,15 +5,15 @@ import { useUpgradeStore } from "../stores/upgradeStore";
 
 export const UpgradeCalculatorForm = () => {
   const [selectedRarity, setSelectedRarity] = useState<"common" | "epic">("common");
-  const [minLevel, setMinLevel] = useState(0);
-  const [maxLevel, setMaxLevel] = useState(0);
+  const [minLevel, setMinLevel] = useState(1);
+  const [maxLevel, setMaxLevel] = useState(1);
   const maxValue = selectedRarity === "common" ? 18 : 27;
 
   const { calculateOres } = useUpgradeStore();
 
   const updateLevel = (newLevel: number, mode: "min" | "max") => {
     const currentMaxValue = selectedRarity === "common" ? 18 : 27;
-    const validLevel = Math.min(Math.max(0, Number(newLevel)), currentMaxValue);
+    const validLevel = Math.min(Math.max(1, Number(newLevel)), currentMaxValue);
 
     if (mode === "min") setMinLevel(validLevel);
     else setMaxLevel(validLevel);
@@ -74,7 +74,7 @@ type LevelSelectorProps = {
 export const LevelSelector = ({ minLevel, maxLevel, updateLevel, maxValue }: LevelSelectorProps) => {
   return (
     <div className="pb-3">
-      <div className="p-3 pb-2 text-xs center-text text-primary-dark">Level range (0-{maxValue})</div>
+      <div className="p-3 pb-2 text-xs center-text text-primary-dark">Level range (1-{maxValue})</div>
       <div className="grid grid-cols-[1fr_auto_1fr] items-center">
         <div className="px-3">
           <input

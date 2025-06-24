@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Clash Ores Calculator
+
+A comprehensive calculator and resource management tool for Clash games, built with Next.js 14. This application helps players optimize their gameplay by providing various calculators for resource management, upgrades, and progression tracking.
+
+## Features
+
+- **Gain Calculator**: Calculate resource gains over time
+- **Single Calculator**: Individual resource calculations
+- **All Resources Calculator**: Comprehensive resource management
+
+## Tech Stack
+
+- Next.js 14
+- TypeScript
+- TailwindCSS
+- Zustand (State Management)
+
+## Prerequisites
+
+Before running the project, make sure you have the following installed:
+
+- Node.js (v18.0.0 or higher)
+- npm/pnpm (v8.0.0 or higher)
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/sndell/clash-ores
+cd clash-ores
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Set up environment variables:
+   Create a `.env.local` file in the root directory with the following variables:
 
-## Learn More
+```env
+CLASH_API_TOKEN=your_api_url_here
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Run the development server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The application will be available at [http://localhost:3000](http://localhost:3000).
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+clash-ores/
+├── public/          # Static assets (images, icons)
+├── src/
+│   ├── app/         # Next.js app router pages
+│   ├── components/  # Reusable UI components
+│   ├── features/    # Feature-specific code
+│   │   ├── gain-calculator/     # Resource gain calculations
+│   │   ├── max-calculator/      # Maximum resource tracking
+│   │   └── upgrade-calculator/  # Upgrade cost calculations
+│   ├── hooks/       # Custom React hooks
+│   ├── stores/      # Zustand stores
+│   ├── styles/      # Global styles
+│   └── utils/       # Utility functions
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Features Directory Structure
+
+Each feature follows a modular architecture with:
+
+- `components/`: Feature-specific UI components
+- `stores/`: Feature-specific Zustand state management stores
+- `types/`: Feature-specific TypeScript type definitions
+- `util/`: Feature-specific Helper functions and utilities
+- `constants/`: Feature-specific constants
+- `actions/`: Feature-specific API calls and data fetching logic

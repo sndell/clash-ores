@@ -1,6 +1,5 @@
 import { INITIAL_ORES } from "@/constants";
 import { equipmentCost } from "@/data";
-import { log } from "node:console";
 import { create } from "zustand";
 
 export const useUpgradeStore = create<UpgradeStore>((set) => ({

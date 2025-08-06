@@ -133,6 +133,11 @@ export const grandWardenEquipment: Equipment[] = [
     rarity: "epic",
     imageUrl: "/images/equipment/Lavaloon_Puppet.webp",
   },
+  {
+    name: "Heroic Torch",
+    rarity: "epic",
+    imageUrl: "/images/equipment/Heroic_Torch.webp",
+  },
 ];
 
 export const royalChampionEquipment: Equipment[] = [

@@ -70,7 +70,7 @@ export const LEAGUE_TIERS = [
   {name: "Electro 31", ores: { shiny: 1060, glowy: 62, starry: 2 }, image_name: "electro"},
   {name: "Electro 32", ores: { shiny: 1070, glowy: 63, starry: 2 }, image_name: "electro"},
   {name: "Electro 33", ores: { shiny: 1080, glowy: 64, starry: 2 }, image_name: "electro"},
-  {name: "Legend", ores: { shiny: 1100, glowy: 65, starry: 2 }, image_name: "Legend"},
+  {name: "Legend", ores: { shiny: 1100, glowy: 65, starry: 2 }, image_name: "legend"},
 ] as const;
 
 export const ORES_PER_TH_WAR = {

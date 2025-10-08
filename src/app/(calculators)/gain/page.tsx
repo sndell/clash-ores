@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="flex flex-col pb-20 py-3 px-5 justify-evenly items-center  bg-center bg-cover h-dvh bg-third">
+    <div className="flex flex-col pb-20 max-xs:pb-24 py-3 px-5 justify-evenly items-center  bg-center bg-cover h-dvh bg-third">
       <BackgroundOverlay />
       <div className="overflow-auto relative w-full rounded-xl border backdrop-blur-xl scrollbar-slim bg-primary border-primary sm:max-w-96">
         <GainHeader />
@@ -32,6 +32,8 @@ export default function Page() {
 const GainHeader = () => (
   <header className="px-3 pt-6 pb-6 space-y-1 text-center">
     <h1>Ore gain calculator</h1>
-    <p className="text-sm text-primary-dark">Enter the details below to calculate how many ores you gain per month</p>
+    <p className="text-sm text-primary-dark">
+      Enter the details below to calculate how many ores you gain per month
+    </p>
   </header>
 );

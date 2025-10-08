@@ -23,7 +23,7 @@ export const useGainStore = create<GainStore>()(
       monthlyTraderOresMedal: INITIAL_ORES,
 
       // Form values
-      trophies: 400,
+      league: 0,
       townHall: 8,
       attacks: 0,
       winRatio: 0,
@@ -36,14 +36,12 @@ export const useGainStore = create<GainStore>()(
         set({ ores: totalOres });
       },
 
-      setTrophies: (value: number) => {
-        const tier = LEAGUE_TIERS.find((tier) => value < tier.maxTrophies);
-        set({
-          trophies: value,
-          dailyOres: tier?.ores || INITIAL_DAILY_ORES,
-        });
+      setLeague: (value: number) => {
+        const { shiny, glowy, starry } = LEAGUE_TIERS[value].ores;
+        set({ league: value, dailyOres: { shiny, glowy, starry } });
         get().calculateMonthlyOres();
       },
+
 
       setTownHall: (value: number) => {
         set({ townHall: value });
@@ -96,7 +94,7 @@ export const useGainStore = create<GainStore>()(
       name: "gain-store",
       // Only persist form values, not calculated values
       partialize: (state) => ({
-        trophies: state.trophies,
+        league: state.league,
         townHall: state.townHall,
         attacks: state.attacks,
         winRatio: state.winRatio,
@@ -110,11 +108,9 @@ export const useGainStore = create<GainStore>()(
           state.monthlyTraderOresMedal = { ...INITIAL_ORES };
           state.monthlyTraderOresGem = { ...INITIAL_ORES };
 
-          // Recalculate daily ores from trophies
-          const tier = LEAGUE_TIERS.find((tier) => state.trophies < tier.maxTrophies);
-          if (tier) {
-            state.dailyOres = tier.ores;
-          }
+          // Recalculate daily ores from league
+          state.dailyOres = LEAGUE_TIERS[state.league].ores;
+
 
           // Recalculate war ores
           state.calculateWarOres();

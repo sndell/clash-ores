@@ -18,7 +18,11 @@ export const calculateTotalMonthlyOres = (state: Omit<GainStore, keyof Function>
     state.monthlyWarOres.glowy +
     state.monthlyTraderOresGem.glowy +
     state.monthlyTraderOresMedal.glowy,
-  starry: state.monthlyWarOres.starry + state.monthlyTraderOresGem.starry + state.monthlyTraderOresMedal.starry,
+  starry:
+    state.dailyOres.starry * 30 +
+    state.monthlyWarOres.starry +
+    state.monthlyTraderOresGem.starry +
+    state.monthlyTraderOresMedal.starry,
 });
 
 export const createRange = (start: number, length: number) => Array.from({ length }, (_, i) => i + start);

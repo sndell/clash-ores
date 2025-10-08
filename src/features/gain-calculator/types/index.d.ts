@@ -9,6 +9,7 @@ interface OreConfig {
 type DailyOres = {
   shiny: number;
   glowy: number;
+  starry: number;
 };
 
 interface GainStore {
@@ -20,7 +21,7 @@ interface GainStore {
   monthlyTraderOresMedal: Ores;
 
   // Form state (persisted)
-  trophies: number;
+  league: number;
   townHall: number;
   attacks: number;
   winRatio: number;
@@ -29,7 +30,7 @@ interface GainStore {
 
   // Actions
   calculateMonthlyOres: () => void;
-  setTrophies: (value: number) => void;
+  setLeague: (value: number) => void;
   setTownHall: (value: number) => void;
   setAttacks: (value: number) => void;
   setWinRatio: (value: number) => void;

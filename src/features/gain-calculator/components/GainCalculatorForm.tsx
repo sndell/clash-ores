@@ -8,11 +8,17 @@ import { Slider } from "./Slider";
 import { ResourceDisplay } from "./ResourceDisplay";
 
 const LeagueDisplay = ({ value }: { value: number }) => {
-  const league = LEAGUE_TIERS.find((tier) => value < tier.maxTrophies) || { name: "Legend" };
+  // const league = LEAGUE_TIERS.find((tier) => value < tier.maxTrophies) || { name: "Legend" };
+  const league = LEAGUE_TIERS[value];
   return (
     <div className="flex gap-2 justify-center items-center">
-      <Image src={`/images/leagues/${league.name}.webp`} alt={league.name} width={32} height={32} />
-      <span>{value}</span>
+      <Image
+        src={`/images/leagues/${league.image_name}.webp`}
+        alt={league.name}
+        width={32}
+        height={32}
+      />
+      <span>{league.name}</span>
     </div>
   );
 };
@@ -26,13 +32,13 @@ const Category = ({ children, label }: { label: string; children: React.ReactNod
 
 export const GainCalculatorForm = () => {
   const {
-    trophies,
+    league,
     townHall,
     attacks,
     winRatio,
     traderMedalValues,
     traderGemValues,
-    setTrophies,
+    setLeague,
     setTownHall,
     setAttacks,
     setWinRatio,
@@ -46,17 +52,23 @@ export const GainCalculatorForm = () => {
     <div className="divide-y divide-primary">
       <Category label="Current trophies">
         <Slider
-          value={trophies}
-          onChange={setTrophies}
-          min={400}
-          max={5000}
-          step={50}
+          value={league}
+          onChange={setLeague}
+          min={0}
+          max={34}
+          step={1}
           displayValue={(value) => <LeagueDisplay value={value} />}
         />
       </Category>
 
       <Category label="War Town Hall">
-        <Slider value={townHall} onChange={setTownHall} min={8} max={17} markers={townHallMarkers} />
+        <Slider
+          value={townHall}
+          onChange={setTownHall}
+          min={8}
+          max={17}
+          markers={townHallMarkers}
+        />
       </Category>
 
       <Category label="War attacks per week">

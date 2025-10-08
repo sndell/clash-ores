@@ -15,7 +15,8 @@ export const OreResult = () => {
   const { ores: gainOres } = useGainStore();
   const { ores: upgradeOres } = useUpgradeStore();
 
-  const selectedOres = pathname === "/single" ? upgradeOres : pathname === "/all" ? equipmentOres : gainOres;
+  const selectedOres =
+    pathname === "/single" ? upgradeOres : pathname === "/all" ? equipmentOres : gainOres;
   const canExpand = pathname === "/single" || pathname === "/all";
 
   const handleClick = () => {
@@ -39,7 +40,9 @@ export const OreResult = () => {
           <div className="flex flex-col items-start max-xs:items-center">
             <span>{selectedOres.shiny.toFixed(0)}</span>
             {showDaysToFinish && canExpand && (
-              <span className="text-xs text-primary-dark">{getDaysToMax(selectedOres.shiny, gainOres.shiny)}d</span>
+              <span className="text-xs text-primary-dark">
+                {getDaysToMax(selectedOres.shiny, gainOres.shiny)}d
+              </span>
             )}
           </div>
         </div>
@@ -54,7 +57,9 @@ export const OreResult = () => {
           <div className="flex flex-col items-start max-xs:items-center">
             <span>{selectedOres.glowy.toFixed(0)}</span>
             {showDaysToFinish && canExpand && (
-              <span className="text-xs text-primary-dark">{getDaysToMax(selectedOres.glowy, gainOres.glowy)}d</span>
+              <span className="text-xs text-primary-dark">
+                {getDaysToMax(selectedOres.glowy, gainOres.glowy)}d
+              </span>
             )}
           </div>
         </div>

@@ -13,7 +13,7 @@ export const UpgradeCalculatorForm = () => {
 
   const updateLevel = (newLevel: number, mode: "min" | "max") => {
     const currentMaxValue = selectedRarity === "common" ? 18 : 27;
-    const validLevel = Math.min(Math.max(1, Number(newLevel)), currentMaxValue);
+    const validLevel = Math.max(0, Math.min(Number(newLevel), currentMaxValue));
 
     if (mode === "min") setMinLevel(validLevel);
     else setMaxLevel(validLevel);
@@ -58,7 +58,12 @@ export const UpgradeCalculatorForm = () => {
           </p>
         </div>
         <RaritySelector selectedRarity={selectedRarity} updateRarity={updateRarity} />
-        <LevelSelector minLevel={minLevel} maxValue={maxValue} updateLevel={updateLevel} maxLevel={maxLevel} />
+        <LevelSelector
+          minLevel={minLevel}
+          maxValue={maxValue}
+          updateLevel={updateLevel}
+          maxLevel={maxLevel}
+        />
       </div>
     </div>
   );
@@ -71,10 +76,17 @@ type LevelSelectorProps = {
   maxValue: number;
 };
 
-export const LevelSelector = ({ minLevel, maxLevel, updateLevel, maxValue }: LevelSelectorProps) => {
+export const LevelSelector = ({
+  minLevel,
+  maxLevel,
+  updateLevel,
+  maxValue,
+}: LevelSelectorProps) => {
   return (
     <div className="pb-3">
-      <div className="p-3 pb-2 text-xs center-text text-primary-dark">Level range (1-{maxValue})</div>
+      <div className="p-3 pb-2 text-xs center-text text-primary-dark">
+        Level range (1-{maxValue})
+      </div>
       <div className="grid grid-cols-[1fr_auto_1fr] items-center">
         <div className="px-3">
           <input

@@ -100,6 +100,11 @@ export const minionPrinceEquipment: Equipment[] = [
     rarity: "epic",
     imageUrl: "/images/equipment/Dark_Crown.webp",
   },
+  {
+    name: "Meteor Staff",
+    rarity: "epic",
+    imageUrl: "/images/equipment/Meteor_Staff.webp",
+  },
 ];
 
 export const grandWardenEquipment: Equipment[] = [

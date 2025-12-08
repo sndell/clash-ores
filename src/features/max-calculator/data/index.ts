@@ -176,6 +176,11 @@ export const royalChampionEquipment: Equipment[] = [
     rarity: "epic",
     imageUrl: "/images/equipment/Electro_Boots.webp",
   },
+  {
+    name: 'Frost Flake',
+    rarity: 'epic',
+    imageUrl: '/images/equipment/Frost_Flake.webp',
+  }
 ];
 
 export const allEquipment = [

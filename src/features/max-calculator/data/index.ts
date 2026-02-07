@@ -34,6 +34,11 @@ export const barbarianKingEquipment: Equipment[] = [
     rarity: "epic",
     imageUrl: "/images/equipment/Snake_Bracelet.webp",
   },
+  {
+    name: "Stick Horse",
+    rarity: "epic",
+    imageUrl: "/images/equipment/Stick_Horse.webp",
+  },
 ];
 
 export const archerQueenEquipment: Equipment[] = [
@@ -177,10 +182,10 @@ export const royalChampionEquipment: Equipment[] = [
     imageUrl: "/images/equipment/Electro_Boots.webp",
   },
   {
-    name: 'Frost Flake',
-    rarity: 'epic',
-    imageUrl: '/images/equipment/Frost_Flake.webp',
-  }
+    name: "Frost Flake",
+    rarity: "epic",
+    imageUrl: "/images/equipment/Frost_Flake.webp",
+  },
 ];
 
 export const allEquipment = [

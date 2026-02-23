@@ -188,10 +188,29 @@ export const royalChampionEquipment: Equipment[] = [
   },
 ];
 
+export const dragonDukeEquipment: Equipment[] = [
+  {
+    name: "Fire Heart",
+    rarity: "common",
+    imageUrl: "/images/equipment/Fire_Heart.webp",
+  },
+  {
+    name: "Flame Blower",
+    rarity: "common",
+    imageUrl: "/images/equipment/Flame_Blower.webp",
+  },
+  {
+    name: "Stun Blaster",
+    rarity: "common",
+    imageUrl: "/images/equipment/Stun_Blaster.webp",
+  },
+];
+
 export const allEquipment = [
   ...barbarianKingEquipment,
   ...archerQueenEquipment,
   ...minionPrinceEquipment,
   ...grandWardenEquipment,
   ...royalChampionEquipment,
+  ...dragonDukeEquipment,
 ];

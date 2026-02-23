@@ -7,6 +7,7 @@ import {
   grandWardenEquipment,
   royalChampionEquipment,
   minionPrinceEquipment,
+  dragonDukeEquipment,
 } from "../data";
 import { HeroCard } from "./HeroCard";
 import { usePageSize } from "@/hooks/usePageSize";
@@ -16,9 +17,9 @@ import { useElementSize } from "@/hooks/useElementSize";
 const gridClasses = cn(
   "grid grid-cols-1",
   "sm:grid-cols-2",
-  "md:grid-cols-[repeat(3,minmax(0,280px))]",
-  "lg:grid-cols-[repeat(4,minmax(0,280px))]",
-  "xl:grid-cols-[repeat(5,minmax(0,280px))]"
+  "md:grid-cols-[repeat(3,minmax(0,260px))]",
+  "lg:grid-cols-[repeat(4,minmax(0,260px))]",
+  "xl:grid-cols-[repeat(6,minmax(0,260px))]"
 );
 
 export const HeroGrid = () => {
@@ -31,17 +32,14 @@ export const HeroGrid = () => {
   return (
     <div
       ref={ref}
-      className={cn(
-        "overflow-y-auto relative gap-3 justify-center py-3 px-5 w-full",
-        gridClasses,
-        isScrollable && "pb-20 max-xs:pb-24"
-      )}
+      className={cn("overflow-y-auto relative gap-3 justify-center px-5 py-3 w-full", gridClasses, isScrollable && "pb-20 max-xs:pb-24")}
     >
       <HeroCard name="Barbarian King" equipment={barbarianKingEquipment} />
       <HeroCard name="Archer Queen" equipment={archerQueenEquipment} />
       <HeroCard name="Minion Prince" equipment={minionPrinceEquipment} />
       <HeroCard name="Grand Warden" equipment={grandWardenEquipment} />
       <HeroCard name="Royal Champion" equipment={royalChampionEquipment} />
+      <HeroCard name="Dragon Duke" equipment={dragonDukeEquipment} />
     </div>
   );
 };

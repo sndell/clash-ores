@@ -17,10 +17,18 @@ import { useElementSize } from "@/hooks/useElementSize";
 const gridClasses = cn(
   "grid grid-cols-1",
   "sm:grid-cols-2",
-  "md:grid-cols-[repeat(3,minmax(0,260px))]",
-  "lg:grid-cols-[repeat(4,minmax(0,260px))]",
-  "xl:grid-cols-[repeat(6,minmax(0,260px))]"
+  "md:grid-cols-[repeat(3,minmax(0,280px))]",
+  "lg:grid-cols-[repeat(4,minmax(0,280px))]",
+  "xl:grid-cols-[repeat(5,minmax(0,280px))]"
 );
+
+// const gridClasses = cn(
+//   "grid grid-cols-1",
+//   "sm:grid-cols-2",
+//   "md:grid-cols-[repeat(3,minmax(0,260px))]",
+//   "lg:grid-cols-[repeat(4,minmax(0,260px))]",
+//   "xl:grid-cols-[repeat(6,minmax(0,260px))]"
+// );
 
 export const HeroGrid = () => {
   const ref = useRef(null);
@@ -39,7 +47,7 @@ export const HeroGrid = () => {
       <HeroCard name="Minion Prince" equipment={minionPrinceEquipment} />
       <HeroCard name="Grand Warden" equipment={grandWardenEquipment} />
       <HeroCard name="Royal Champion" equipment={royalChampionEquipment} />
-      <HeroCard name="Dragon Duke" equipment={dragonDukeEquipment} />
+      {/* <HeroCard name="Dragon Duke" equipment={dragonDukeEquipment} /> */}
     </div>
   );
 };

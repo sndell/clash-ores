@@ -205,6 +205,11 @@ export const dragonDukeEquipment: Equipment[] = [
     imageUrl: "/images/equipment/Stun_Blaster.webp",
   },
   {
+    name: 'Electro Fangs',
+    rarity: "common",
+    imageUrl: "/images/equipment/Electro_Fangs.webp",
+  },
+  {
     name: "Rocket Backpack",
     rarity: "epic",
     imageUrl: "/images/equipment/Rocket_Backpack.webp",

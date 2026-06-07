@@ -77,6 +77,11 @@ export const archerQueenEquipment: Equipment[] = [
     rarity: "epic",
     imageUrl: "/images/equipment/Action_Figure.webp",
   },
+  {
+    name: "Monolith Arrow",
+    rarity: "epic",
+    imageUrl: "/images/equipment/Monolith_Arrow.webp",
+  },
 ];
 
 export const minionPrinceEquipment: Equipment[] = [
@@ -205,7 +210,7 @@ export const dragonDukeEquipment: Equipment[] = [
     imageUrl: "/images/equipment/Stun_Blaster.webp",
   },
   {
-    name: 'Electro Fangs',
+    name: "Electro Fangs",
     rarity: "common",
     imageUrl: "/images/equipment/Electro_Fangs.webp",
   },

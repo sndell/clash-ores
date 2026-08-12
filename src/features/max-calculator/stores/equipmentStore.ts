@@ -57,6 +57,20 @@ export const useEquipmentStore = create<EquipmentStore>()(
         });
       },
     }),
-    { name: "equipment-store" }
+    {
+      name: "equipment-store",
+      // Only persist user progress; totals are derived from the current equipment list
+      partialize: (state) => ({
+        levels: state.levels,
+        equipmentOres: state.equipmentOres,
+      }),
+      // Recalculate totals when store is rehydrated (keeps new equipment like Revenge Deck in sync)
+      onRehydrateStorage: () => (state) => {
+        if (state) {
+          state.totalOres = getTotalOres();
+          state.calculateAllOres();
+        }
+      },
+    }
   )
 );

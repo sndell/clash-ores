@@ -219,6 +219,11 @@ export const dragonDukeEquipment: Equipment[] = [
     rarity: "epic",
     imageUrl: "/images/equipment/Rocket_Backpack.webp",
   },
+  {
+    name: "Revenge Deck",
+    rarity: "epic",
+    imageUrl: "/images/equipment/Revenge_Deck.webp",
+  },
 ];
 
 export const allEquipment = [

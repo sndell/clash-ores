@@ -36,7 +36,7 @@ export const CardsTrackerBanner = () => {
     <aside className="fixed top-2 left-1/2 z-50 -translate-x-1/2" aria-label="Clash of Cards event">
       <Link
         href="https://clashify.app/cards"
-        className="group flex h-[2.7rem] min-w-[15.25rem] items-center rounded-[0.58rem] bg-gradient-to-r from-[#8751b1] via-[#542777] to-[#351a56] py-[0.2rem] pr-[0.45rem] pl-[0.4rem] text-white shadow-md [text-shadow:0_1px_1px_rgba(30,0,45,0.9)] transition duration-150 hover:-translate-y-px hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-white"
+        className="group flex h-[2.7rem] min-w-[15.25rem] items-center rounded-[0.58rem] border border-white/20 bg-gradient-to-r from-[#8751b1] via-[#542777] to-[#351a56] py-[0.2rem] pr-[0.45rem] pl-[0.4rem] text-white shadow-md [text-shadow:0_1px_1px_rgba(30,0,45,0.9)] transition duration-150 hover:-translate-y-px hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-white"
         aria-label="Open the Clash of Cards Tracker and Trade Finder"
       >
         <span className="mr-1 block h-8 w-8 shrink-0" aria-hidden="true">

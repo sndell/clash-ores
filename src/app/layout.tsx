@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 import "@/styles/globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { CardsTrackerBanner } from "@/components/ui/CardsTrackerBanner";
+import { ClashifyBanner } from "@/components/ui/ClashifyBanner";
 
 const clashRegular = localFont({ src: "../fonts/Clash_Regular.otf" });
 
@@ -14,7 +14,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${clashRegular.className} antialiased`}>
         <GoogleAnalytics gaId="G-9J3ZNM8FWP" />
-        <CardsTrackerBanner />
+        <ClashifyBanner />
         {children}
       </body>
     </html>
